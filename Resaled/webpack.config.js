@@ -1,8 +1,10 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   context: __dirname,
   entry: './frontend/resaled.jsx',
+
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js'
