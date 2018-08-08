@@ -1,4 +1,4 @@
-export const signUp = (user) => (
+export const signup = (user) => (
     $.ajax({
       method: "post",
       dataType: 'json',
@@ -7,7 +7,7 @@ export const signUp = (user) => (
     })
 );
 
-export const login = (user) => (
+export const signin = (user) => (
   $.ajax ({
     method: "post",
     dataType: "json",
@@ -16,7 +16,7 @@ export const login = (user) => (
   })
 );
 
-export const logout = () => (
+export const signout = () => (
   $.ajax ({
     method: "delete",
     dataType: "json",

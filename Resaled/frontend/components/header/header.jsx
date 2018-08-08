@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = ({currentUser, logout}) => {
+const Header = ({currentUser, signout}) => {
   const sessionLinks = () => (
 
     //If there's no user...
     <nav className="login-signup">
-    <Link to="/login" >Login</Link>
+    <Link to="/signin" >Login</Link>
     <Link to="/signup" >Sign Up!</Link>
     </nav>
   );
@@ -15,7 +15,7 @@ const Header = ({currentUser, logout}) => {
   const greeting = () => (
     <nav className="welcome">
       <h3>Welcome, {currentUser.username}!</h3>
-      <button onClick={logout}>Logout</button>
+      <button onClick={signout}>Logout</button>
     </nav>
   );
 
