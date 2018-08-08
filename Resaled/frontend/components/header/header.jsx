@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = ({currentUser, signout}) => {
+const Header = ({currentUser, signout, openModal}) => {
   const sessionLinks = () => (
 
     //If there's no user...
     <nav className="login-signup">
-    <Link to="/signin" >Login</Link>
-    <Link to="/signup" >Sign Up!</Link>
+
+      <button onClick={() => openModal('signin')}>Sign In</button>
+     &nbsp;or&nbsp;
+     <button onClick={() => openModal('signup')}>Sign Up</button>
     </nav>
   );
 

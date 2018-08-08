@@ -1,3 +1,71 @@
 .mainTitle {
   font-size: 25px;
 }
+
+.modal-background {
+  /* position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(249, 249, 249, 0.9);
+  z-index: 350;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; */
+  text-align: center;
+  background-color: rgba(249,249,249,0.9);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 350;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal-child {
+  /* position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 95%;
+  max-width: 620px;
+  border: 1px solid #1a1a1a;
+  padding: 100px 80px;
+  box-sizing: border-box;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  overflow-y: scroll; */
+  position: relative;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  border: 1px solid #1a1a1a;
+  max-width: 620px;
+  max-height: 95%;
+  padding: 100px 80px;
+  box-sizing: border-box;
+  box-shadow: 0 0 18px rgba(0,0,0,0.4);
+  overflow-y: scroll;
+}
+
+.login-form-box {
+/* max-height: 95%;
+max-width: 620px;
+border: 1px solid #1a1a1a;
+padding: 100px 80px;
+box-sizing: border-box;
+background: #fff;
+outline: none;
+overflow-y: scroll; */
+}
+
+.login-form-container {
+
+}
