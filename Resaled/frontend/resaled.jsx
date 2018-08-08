@@ -6,14 +6,6 @@ import { signup, signin, signout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  // const store = configureStore();
-
-  //TESTING STUFF
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.login = signin;
-  // window.signUp = signup;
-  // window.logout = signout;
 
   let store;
   if (window.currentUser) {

@@ -9,7 +9,7 @@ import Modal from './header/modal';
 const App = () => (
   <div>
     <header>
-    <h1 className="mainTitle">Resaled</h1>
+
     <HeaderContainer />
     <Modal />
     </header>
