@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSubmit = this.demoSubmit.bind(this);
   }
 
   update(field) {
@@ -21,7 +22,14 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    console.log(user);
     this.props.processForm(user);
+  }
+
+  demoSubmit(e) {
+    e.preventDefault();
+    const user = {username: "Mortimer Laraby", email: "", password: "123456"};
+    this.props.demoSignIn(user);
   }
 
   renderErrors() {
@@ -43,7 +51,8 @@ class SessionForm extends React.Component {
           <div>JOIN THE COMMUNITY</div>
           <br/>
           <br/>
-          <div className="signupPrompt">{this.props.formType} below or {this.props.otherForm} </div>
+          <div className="signupPrompt">{this.props.formType} below or {this.props.otherForm}
+          </div>
           <br/>
           {this.renderErrors()}
           <div className="signin-form">
@@ -75,13 +84,11 @@ class SessionForm extends React.Component {
               OR
               <div>---------------------------------------------</div>
             </div>
-            <input
-              className="dummy-signin"
-              type="submit"
-              value="sign in with demo account" />
-
           </div>
         </form>
+        <button
+          className="dummy-signin"
+          onClick={this.demoSubmit}>sign in with demo account</button>
       </div>
     );
   }
