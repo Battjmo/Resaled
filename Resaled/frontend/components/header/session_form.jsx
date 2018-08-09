@@ -68,6 +68,17 @@ class SessionForm extends React.Component {
               className="session-submit"
               type="submit"
               value={this.props.formType} />
+            <br/>
+            <div className="auth-or">
+              <div>-------------------</div>
+              OR
+              <div>-------------------</div>
+            </div>
+            <input
+              className="dummy-signin"
+              type="submit"
+              value="sign in with demo account" />
+
           </div>
         </form>
       </div>
