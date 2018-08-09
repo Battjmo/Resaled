@@ -71,6 +71,10 @@
   letter-spacing: 4px;
   /* margin-left: 130px; */
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #1a1a1a;
+
 }
 
 

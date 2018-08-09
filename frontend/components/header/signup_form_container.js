@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { signup, signin } from '../../actions/session_actions';
+import { signup, signin, receiveErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => {
         Sign In
       </a>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(receiveErrors([]))
   };
 };
 

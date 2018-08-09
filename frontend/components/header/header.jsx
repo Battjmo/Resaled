@@ -6,7 +6,7 @@ const Header = ({currentUser, signout, openModal}) => {
   //If there's no user...
   const sessionLinks = () => (
     <nav className="header">
-      <h1 className="mainTitle">Resaled</h1>
+      <Link to="/" className="mainTitle">Resaled</Link>
       <div className='headerMenu'>
       <a onClick={() => openModal('signin')}>SignIn</a>
         &nbsp;/&nbsp;
@@ -18,7 +18,7 @@ const Header = ({currentUser, signout, openModal}) => {
   //if there is....
   const greeting = () => (
     <nav className="header">
-      <h1 className="mainTitle">Resaled</h1>
+      <a to="/" className="mainTitle">Resaled</a>
       <div className='headerMenu'>
       <h3>Welcome, {currentUser.username}!</h3>
       <br/>
