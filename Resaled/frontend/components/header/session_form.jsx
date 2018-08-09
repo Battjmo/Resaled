@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="auth-error" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -44,6 +44,7 @@ class SessionForm extends React.Component {
           <br/>
           <br/>
           <div className="signupPrompt">{this.props.formType} below or {this.props.otherForm} </div>
+          <br/>
           {this.renderErrors()}
           <div className="signin-form">
             <br/>
@@ -70,9 +71,9 @@ class SessionForm extends React.Component {
               value={this.props.formType} />
             <br/>
             <div className="auth-or">
-              <div>-------------------</div>
+              <div>---------------------------------------------</div>
               OR
-              <div>-------------------</div>
+              <div>---------------------------------------------</div>
             </div>
             <input
               className="dummy-signin"
