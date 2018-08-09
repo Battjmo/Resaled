@@ -12,7 +12,6 @@ const App = () => (
     <Route path="/" component={HeaderContainer} />
     <Modal />
     </header>
-
   </div>
 );
 
