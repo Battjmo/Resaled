@@ -9,7 +9,6 @@ import Modal from './header/modal';
 const App = () => (
   <div>
     <header>
-
     <HeaderContainer />
     <Modal />
     </header>
