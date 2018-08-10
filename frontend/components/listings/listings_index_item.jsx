@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 const ListingsIndexItem = (props) => {
   return (
-    <li>
+    <li id={props.listing.id}>
       <Link to={`/listings/${props.listing.id}`}>{props.listing.title}</Link>
       <Link to="#">{props.listing.brand}</Link>
       <Link to="#">{props.listing.price}</Link>

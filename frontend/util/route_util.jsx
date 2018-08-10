@@ -1,4 +1,5 @@
 import React from 'react';
+import { openModal } from '../action/modal_actions';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import { Redirect } from 'react-router';
@@ -8,8 +9,7 @@ const Auth = ({component: Component, path, loggedIn, exact}) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/" />
-    )
+      () => openModal('signin'))
   )}/>
 );
 

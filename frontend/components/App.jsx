@@ -12,11 +12,12 @@ const App = () => (
     <header>
       <Switch>
     <Route exact path="/" component={HeaderContainer} />
+    <AuthRoute exact path="/sell" component={SellFormContainer}></AuthRoute>
     <Redirect to='/' />
     </Switch>
     <Modal />
     </header>
-    <Route exact path="/" component={ListingsIndexContainer} />
+    <ListingsIndexContainer/>
   </div>
 );
 

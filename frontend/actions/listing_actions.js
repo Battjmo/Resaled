@@ -10,9 +10,9 @@ export const receiveListing = listing => ({
   listing
 });
 
-export const receiveListings = listings => ({
+export const receiveListings = Listings => ({
   type: RECEIVE_LISTINGS,
-  listings
+  Listings
 });
 
 export const receiveListingErrors = errors => ({

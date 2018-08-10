@@ -5,7 +5,7 @@ import listingsReducer from './listings_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  listings: listingsReducer
+  Listings: listingsReducer
 });
 
 export default entitiesReducer;

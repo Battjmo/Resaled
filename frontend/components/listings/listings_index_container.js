@@ -5,7 +5,7 @@ import ListingsIndex from './listings_index';
 import { fetchListings } from '../../actions/listing_actions';
 
 const mapStateToProps = state => ({
-  listings: state.listings
+  Listings: Object.keys(state.entities.Listings).map(id => state.entities.Listings[id])
 });
 
 const mapDispatchToProps = dispatch => ({

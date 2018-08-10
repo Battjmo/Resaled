@@ -3,14 +3,13 @@ import ListingsIndexItem from './listings_index_item';
 
 class ListingsIndex extends React.Component {
 
-componentDidMount() {
+componentWillMount() {
   this.props.fetchListings();
 }
 
 render() {
-  let listings = this.props.listings;
-  console.log(listings);
-  listings = listings.map(listing => (
+  let listingsList = this.props.Listings;
+  listingsList = listingsList.map(listing => (
     <ListingsIndexItem
       id={listing.id}
       listing={listing} />
@@ -18,7 +17,7 @@ render() {
 
   return (
   <ul>
-    { listings }
+    { listingsList }
   </ul>
   );
 }
