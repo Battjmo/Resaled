@@ -6,9 +6,11 @@ import ListingForm from './listing_form';
 const mapStateToProps = ({session, entities: { users } }) => {
   const currentUser = users[session.id];
   const Listing = { user_id: currentUser.id, title: "", price: 0, size: "", category: "", brand: "", description: ""};
+  let photoFile = null;
   const formType = "Create Listing";
 
-  return { Listing, formType };
+
+  return { Listing, formType, photoFile };
 };
 
 const mapDispatchToProps = (dispatch) => ({

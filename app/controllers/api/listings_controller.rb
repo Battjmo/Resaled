@@ -6,7 +6,7 @@ class Api::ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    render json: @listings
+    render :index
     # render json: @listings.errors.full_messages, status: 422
   end
 
@@ -29,7 +29,7 @@ class Api::ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:user_id, :title, :price, :size, :category, :brand, :description)
+    params.require(:listing).permit(:user_id, :title, :price, :size, :category, :brand, :description, :photo)
   end
 
   #END OF CLASS

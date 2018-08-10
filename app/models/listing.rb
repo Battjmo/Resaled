@@ -19,6 +19,6 @@ class Listing < ApplicationRecord
   validates :price, numericality: { only_integer: true, greater_than: 0 }
 
   belongs_to :user
-  has_many_attached :photos
+  has_one_attached :photo
 
 end

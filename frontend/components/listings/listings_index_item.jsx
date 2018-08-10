@@ -8,6 +8,7 @@ const ListingsIndexItem = (props) => {
       <Link to="#">{props.listing.brand}</Link>
       <Link to="#">{props.listing.price}</Link>
       <Link to="#">{props.listing.size}</Link>
+      <img src={props.photo}/>
     </li>
   );
 };

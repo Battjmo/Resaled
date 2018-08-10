@@ -12,7 +12,9 @@ render() {
   listingsList = listingsList.map(listing => (
     <ListingsIndexItem
       id={listing.id}
-      listing={listing} />
+      listing={listing}
+      photo={listing.photoUrl}
+       />
   ));
 
   return (
