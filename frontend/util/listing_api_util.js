@@ -1,6 +1,7 @@
-export const fetchListing = listingId => (
+export const fetchListing = (listingId) => (
   $.ajax({
     method: "get",
+    dataType: "json",
     url: `api/listings/${listingId}`
   })
 );
@@ -8,29 +9,33 @@ export const fetchListing = listingId => (
 export const fetchListings = () => (
   $.ajax({
     method: "get",
-    url: `api/listings/`
+    dataType: "json",
+    url: `/api/listings/`
   })
 );
 
-export const createListing = listing => (
+export const createListing = (listing) => (
   $.ajax({
     method: "post",
-      url: `api/listings/`,
+    dataType: "json",
+      url: `/api/listings/`,
     data: { listing }
   })
 );
 
-export const deleteListing = listingId => (
+export const deleteListing = (listingId) => (
   $.ajax({
     method: "delete",
-    url: `api/listings/${listingId}`
+    dataType: "json",
+    url: `/api/listings/${listingId}`
   })
 );
 
-export const updateListing = listing => (
+export const updateListing = (listing) => (
   $.ajax({
     method: "patch",
-    url: `api/listings/${listing.id}`,
+    dataType: "json",
+    url: `/api/listings/${listing.id}`,
     data: { listing }
   })
 );

@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/listing_api_util';
+import * as listingUtil from '../util/listing_api_util';
 
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
@@ -26,7 +26,7 @@ export const removeListing = listingId => ({
 });
 
 export const fetchListing = listingId => dispatch => (
-    APIUtil.fetchListing(listingId).then(listing => (
+    listingUtil.fetchListing(listingId).then(listing => (
       dispatch(receiveListing(listing))
     ), err => (
       dispatch(receiveListingErrors(err.responseJSON))
@@ -34,7 +34,7 @@ export const fetchListing = listingId => dispatch => (
 );
 
 export const fetchListings = () => dispatch => (
-  APIUtil.fetchListings().then(listings => (
+  listingUtil.fetchListings().then(listings => (
     dispatch(receiveListings(listings))
   ), err => (
     dispatch(receiveListingErrors(err.responseJSON))
@@ -42,7 +42,7 @@ export const fetchListings = () => dispatch => (
 );
 
 export const createListing = listing => dispatch => (
-  APIUtil.createListing(listing).then(listing => (
+  listingUtil.createListing(listing).then(listing => (
     dispatch(receiveListing(listing))
   ), err => (
     dispatch(receiveListingErrors(err.responseJSON))
@@ -50,7 +50,7 @@ export const createListing = listing => dispatch => (
 );
 
 export const updateListing = listing => dispatch => (
-  APIUtil.updateListing(listing).then(listing => (
+  listingUtil.updateListing(listing).then(listing => (
     dispatch(receiveListing(listing))
   ), err => (
     dispatch(receiveListingErrors(err.responseJSON))
@@ -58,7 +58,7 @@ export const updateListing = listing => dispatch => (
 );
 
 export const deleteListing = listingId => dispatch => (
-  APIUtil.deleteListing(listingId).then(delPostId => (
+  listingUtil.deleteListing(listingId).then(delPostId => (
     dispatch(removeListing(listingId))
   ))
 );

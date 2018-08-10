@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-// import { signup, signin, signout } from './actions/session_actions';
-import
-{fetchListing, fetchListings, createListing, deleteListing, updateListing } from
-'./actions/listing_actions';
+import { signup, signin, signout } from './actions/session_actions';
+import { fetchListing } from './actions/listing_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -24,9 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.dispatch = store.dispatch;
-  window.getState = store.dispatch;
-  window.fetchListings = fetchListings;
+
 
   ReactDOM.render(<Root store={store} />, root);
 });
