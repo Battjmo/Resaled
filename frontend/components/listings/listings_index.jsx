@@ -3,7 +3,7 @@ import ListingsIndexItem from './listings_index_item';
 
 class ListingsIndex extends React.Component {
 
-componentWillMount() {
+componentDidMount() {
   this.props.fetchListings();
 }
 

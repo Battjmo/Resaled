@@ -5,9 +5,9 @@ export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
 export const REMOVE_LISTING = "REMOVE_LISTING";
 
-export const receiveListing = listing => ({
+export const receiveListing = Listing => ({
   type: RECEIVE_LISTING,
-  listing
+  Listing
 });
 
 export const receiveListings = Listings => ({

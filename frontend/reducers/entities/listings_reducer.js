@@ -13,7 +13,7 @@ const listingsReducer = (state = {}, action) => {
       console.log(action);
       return action.Listings;
     case RECEIVE_LISTING:
-      const newListing = { [action.listing.id]: action.listing };
+      const newListing = { [action.Listing.id]: action.Listing };
       return merge({}, state, newListing);
     case REMOVE_LISTING:
       let newState = merge({}, state);

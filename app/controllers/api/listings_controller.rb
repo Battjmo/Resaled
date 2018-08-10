@@ -1,5 +1,9 @@
 class Api::ListingsController < ApplicationController
 
+  def new
+  end
+
+
   def index
     @listings = Listing.all
     render json: @listings
@@ -11,9 +15,15 @@ class Api::ListingsController < ApplicationController
   #   render json: @listing
   # end
   #
-  # def create
-  #   @listing = Listing.find(params[:id])
-  # end
+  def create
+    @listing = Listing.new(listing_params)
+    if @listing.save
+      # render :index
+      render :show
+    else
+      render json: @listing.errors.full_messages, status: 422
+    end
+  end
 
 
   private
