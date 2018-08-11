@@ -10,11 +10,11 @@ class Api::ListingsController < ApplicationController
     # render json: @listings.errors.full_messages, status: 422
   end
 
-  # def show
-  #   @listing = Listing.find(params[:id])
-  #   render json: @listing
-  # end
-  #
+  def show
+    @listing = Listing.find(params[:id])
+    render :show
+  end
+
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
