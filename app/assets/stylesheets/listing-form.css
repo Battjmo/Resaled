@@ -1,0 +1,140 @@
+.listing-form-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
+  background-image: url("sell-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 60px;
+}
+
+.listing-form-hero h1 {
+font-size: 54px;
+font-weight: 800;
+color: #fff;
+}
+
+.listing-details {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 6rem;
+}
+
+.listing-details-title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  line-height: 18px;
+  margin-bottom: 24px;
+}
+
+.listing-form {
+  width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+
+.detail-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.detail {
+  height: 38px;
+  padding: 6px 10px;
+  border: 1px solid #666;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+.left-col {
+  width: 375px;
+}
+
+.right-col {
+  width: 375px;
+}
+
+.brand-field {
+  width: 375px;
+}
+
+.category_field {
+  display:inline;
+  -webkit-appearance: none;
+  width: 375px;
+  border-radius: 0px;
+  background-color: #fff;
+}
+
+.size-field {
+  width: 375px;
+}
+
+.title-field {
+  width: 375px;
+}
+
+.right {
+  transform: rotate(-45deg);
+}
+
+.listing-description-field {
+  border: 1px solid #666;
+  border-radius: 1.5px;
+  padding: 20px;
+  min-height: 140px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.price-input {
+  height: 32px;
+  border: 1px solid #666;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  margin-left: 5px;
+}
+
+.price-form-label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.preview-image-container {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #1a1a1a;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 100%
+}
+
+.image-preview-header {
+
+}
+
+.listing-submit {
+  margin-top: 30px;
+  width: 100%;
+  height: 6rem;
+  font-size: 2.4rem;
+  cursor: pointer;
+  padding: 0 30px;
+  font-weight: bold;
+  letter-spacing: .15rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  line-height: 29px;
+  color: #fff;
+  background-color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+
+}

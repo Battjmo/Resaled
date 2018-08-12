@@ -65,60 +65,92 @@ class ListingForm extends React.Component {
   }
 
   render () {
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
-    console.log(this.state.user_id);
-    console.log
+    const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
     return (
       <div>
-        <h3>{this.props.formType}</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Title
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('title')} />
-          </label>
+        <div className="listing-form-hero">
+          <h1>Turn Your Closet Into Cash</h1>
+        </div>
 
-          <label>Category
-            <input
-              type="text"
-              value={this.state.category}
-              onChange={this.update('category')} />
-          </label>
+        <form className="listing-form" onSubmit={this.handleSubmit}>
 
-          <label>Brand
+          <div className="listing-details">
+          <h3 className="listing-details-title">DETAILS</h3>
+          <div className="detail-columns">
+            <div className="left-col">
+
+              <select className="detail category_field">
+                <option value="Shirt">Shirt</option>
+                <option value="Jacket">Jacket</option>
+                <option value="Pants">Pants</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Jewelery">Jewelery</option>
+                <option value="Luggage">Luggage</option>
+                <option value="Other">Other</option>
+              </select>
+            <br/>
+            <br/>
             <input
+              className="detail brand-field"
               type="text"
+              placeholder="Brand"
               value={this.state.brand}
               onChange={this.update('brand')} />
-          </label>
 
-          <label>Size
+            </div>
+
+            <div className="right-col">
+
             <input
+              className="detail size-field"
               type="text"
+              placeholder="Size"
               value={this.state.size}
               onChange={this.update('size')} />
-          </label>
 
-          <label>Price (Greater than 0 please, ya big dingus)
+              <br/>
+              <br/>
+
+
             <input
-              type="number"
-              value={this.state.price}
-              onChange={this.update('price')} />
-          </label>
+              className="detail title-field"
+              type="text"
+              placeholder="Item name"
+              value={this.state.title}
+              onChange={this.update('title')} />
+
+          </div>
+          </div>
+          </div>
 
           <label>Description
             <textarea
+              className="listing-description-field"
               value={this.state.description}
               onChange={this.update('description')} />
           </label>
 
+          <label className="price-form-label">$
+            <input
+              className="price-input"
+              type="number"
+              placeholder="Price (USD)"
+              value={this.state.price}
+              onChange={this.update('price')} />
+          </label>
+
+          <h3>UPLOAD IMAGE </h3>
+
           <input type="file" onChange={this.handleFile} />
 
-          <h4>Image Preview:</h4>
-          {preview}
+          <br/>
+          <br/>
 
-          <input type="submit" value={this.props.formType} />
+          <h4 className="image-preview-header">Image Preview:</h4>
+          <div className="preview-image-container">
+          {preview}
+          </div>
+          <input className="listing-submit" type="submit" value={this.props.formType} />
         </form>
       </div>
     );
