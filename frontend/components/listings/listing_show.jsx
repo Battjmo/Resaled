@@ -55,10 +55,14 @@ class ListingShow extends React.Component {
         <br/>
         <button className="button black">BUY</button>
         <br/>
+        <br/>
+        {this.canEdit()}
+        <br/>
+        <p className='description-title'>DESCRIPTION</p>
         <p className='description'>{listing.description}</p>
         <br/>
         <Link to="/">Back to Index</Link>
-        {this.canEdit()}
+
         </div>
       </div>
     );

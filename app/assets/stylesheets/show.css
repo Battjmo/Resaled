@@ -28,3 +28,9 @@
   box-sizing: border-box;
   position: relative;
 }
+
+.description-title {
+  letter-spacing: 1.25px;
+  color: #666;
+  margin-bottom: 1.6rem;
+}

@@ -1,0 +1,22 @@
+.index {
+  display: block;
+  position: relative;
+  padding: 27px 27px 0;
+  width: 870px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 150px;
+}
+
+.index-listing {
+  max-width: 209px;
+  margin-right: 18px;
+  position: relative;
+}
+
+.listing-index-image {
+  max-width: 209px;
+  max-height: 279px;
+  min-height: 279px;
+}

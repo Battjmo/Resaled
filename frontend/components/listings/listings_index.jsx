@@ -11,6 +11,7 @@ render() {
   let listingsList = this.props.Listings;
   listingsList = listingsList.map(listing => (
     <ListingsIndexItem
+      className="index-listing"
       id={listing.id}
       listing={listing}
       photo={listing.photoUrl}
@@ -18,7 +19,7 @@ render() {
   ));
 
   return (
-  <ul>
+  <ul className="index">
     { listingsList }
   </ul>
   );
