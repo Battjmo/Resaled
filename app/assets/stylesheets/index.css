@@ -13,7 +13,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
 
+.listing-link {
+  text-decoration: none;
+  color: #000;
 }
 
 .index-listing {

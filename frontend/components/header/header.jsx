@@ -23,7 +23,6 @@ const Header = ({currentUser, signout, openModal}) => {
       <a href="/" className="mainTitle">Resaled</a>
       <div className='headerMenu'>
       <Link className="sell-button" to="/api/listings/new">Sell</Link>
-      <h3>Welcome, {currentUser.username}!</h3>
       <br/>
       <a className="logoutButton" onClick={signout}>Sign Out</a>
       </div>

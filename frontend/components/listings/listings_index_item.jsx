@@ -5,7 +5,7 @@ const ListingsIndexItem = (props) => {
   console.log(props.id);
   return (
     <li className="index-listing" id={props.id}>
-      <Link to={`/api/listings/${props.id}`}>
+      <Link className="listing-link" to={`/api/listings/${props.id}`}>
       <img className="listing-index-image" src={props.photo}/>
       <div>{props.listing.brand}</div>
       <div>{props.listing.title}</div>
