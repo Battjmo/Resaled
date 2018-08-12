@@ -11,7 +11,6 @@ render() {
   let listingsList = this.props.Listings;
   listingsList = listingsList.map(listing => (
     <ListingsIndexItem
-      className="index-listing"
       id={listing.id}
       listing={listing}
       photo={listing.photoUrl}
@@ -19,9 +18,12 @@ render() {
   ));
 
   return (
+  <div className="index-wrapper">
+  <h1 className="feed-title">Browse The Feed</h1>
   <ul className="index">
     { listingsList }
   </ul>
+  </div>
   );
 }
 

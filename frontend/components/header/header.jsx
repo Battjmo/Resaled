@@ -6,6 +6,7 @@ const Header = ({currentUser, signout, openModal}) => {
   //If there's no user...
   const sessionLinks = () => (
     <nav className="header">
+      <div>Search</div>
       <Link to="/" className="mainTitle">Resaled</Link>
       <div className='headerMenu'>
       <a onClick={() => openModal('signin')}>Sell Yo Shit</a>
@@ -21,7 +22,7 @@ const Header = ({currentUser, signout, openModal}) => {
     <nav className="header">
       <a href="/" className="mainTitle">Resaled</a>
       <div className='headerMenu'>
-      <Link to="/api/listings/new">Sell Yo Shit</Link>
+      <Link className="sell-button" to="/api/listings/new">Sell</Link>
       <h3>Welcome, {currentUser.username}!</h3>
       <br/>
       <a className="logoutButton" onClick={signout}>Sign Out</a>

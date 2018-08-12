@@ -1,22 +1,39 @@
+.index-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 0;
+  height: 100%
+}
+
 .index {
-  display: block;
-  position: relative;
   padding: 27px 27px 0;
-  width: 870px;
+  width: 970px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: 150px;
+  align-items: center;
+
 }
 
 .index-listing {
   max-width: 209px;
   margin-right: 18px;
   position: relative;
+  margin-bottom: 40px;
 }
 
 .listing-index-image {
   max-width: 209px;
   max-height: 279px;
   min-height: 279px;
+}
+
+.feed-title {
+  text-align: center;
+  line-height: 25px;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
