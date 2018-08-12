@@ -15,6 +15,11 @@ class Api::ListingsController < ApplicationController
     render :show
   end
 
+  def edit
+    @list= Listing.find(params[:id])
+    render :edit
+  end
+
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
@@ -23,6 +28,13 @@ class Api::ListingsController < ApplicationController
     else
       render json: @listing.errors.full_messages, status: 422
     end
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    render :show
+
   end
 
 

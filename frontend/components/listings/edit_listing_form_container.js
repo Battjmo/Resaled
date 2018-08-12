@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ListingForm from './listing_form';
-import { fetchListing, updateListing } from '../../actions/listing_actions';
+import { fetchListing, updateListing, deleteListing } from '../../actions/listing_actions';
 
-const mapStateToProps = (state, ownProps) => {
-  const defaultListing = { user_id: 0, title: "", price: 0, size: "", category: "", brand: "", description: ""};
-  const Listing = state.Listings[ownProps.match.params.listingId] || defaultListing;
+const mapStateToProps = ({ session, entities: { users, Listings } }, ownProps) => {
+  const Listing = Listings[ownProps.match.params.id];
+  const currentUser = users[session.id];
   const formType = 'Update Listing';
 
-  return { Listing, formType };
+  return { Listing, currentUser, formType };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchListing: id => dispatch(fetchListing(id)),
+    deleteListing: id => dispatch(deleteListing(id)),
     action: listing => dispatch(updateListing(listing)),
   };
 };
