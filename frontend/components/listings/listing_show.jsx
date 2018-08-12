@@ -5,23 +5,21 @@ class ListingShow extends React.Component {
   constructor(props) {
     super(props);
     this.canEdit = this.canEdit.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchListing(this.props.match.params.id);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log("NEXT PROPS: ", nextProps);
-    console.log(nextProps.match.params.id);
-    console.log(this.props.listing.id);
-    if (this.props.listing.id != nextProps.match.params.id) {
-      this.props.fetchListing(nextProps.match.params.id);
-    }
-  }
 
   canEdit() {
     return (this.props.currentUser.id === this.props.listing.userId);
+  }
+
+  delete() {
+    this.props.deleteListing(this.props.listing.id);
+    this.props.history.push('/');
   }
 
 
@@ -40,7 +38,7 @@ class ListingShow extends React.Component {
         <img src={listing.photoUrl} />
         <Link to="/">Back to Index</Link>
         <Link to={`/api/listings/${listing.id}/edit`}>Edit Listing</Link>
-        <Link to={`/`} onClick={this.props.deleteListing(listing.id)}>Delete Listing</Link>
+        <Link to={`/`} onClick={this.delete}>Delete Listing</Link>
       </div>
     );
   } else {

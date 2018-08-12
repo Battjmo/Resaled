@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ListingForm from './listing_form';
-import { fetchListing, updateListing, deleteListing } from '../../actions/listing_actions';
+import { fetchListing, updateListing } from '../../actions/listing_actions';
 
 const mapStateToProps = ({ session, entities: { users, Listings } }, ownProps) => {
   const Listing = Listings[ownProps.match.params.id];
@@ -14,7 +14,6 @@ const mapStateToProps = ({ session, entities: { users, Listings } }, ownProps) =
 const mapDispatchToProps = dispatch => {
   return {
     fetchListing: id => dispatch(fetchListing(id)),
-    deleteListing: id => dispatch(deleteListing(id)),
     action: listing => dispatch(updateListing(listing)),
   };
 };
@@ -31,12 +30,13 @@ class EditListingForm extends React.Component {
   }
 
   render() {
-    const { action, formType, Listing } = this.props;
+    const { action, formType, Listing, currentUser } = this.props;
     return (
       <ListingForm
         action={action}
         formType={formType}
-        Listing={Listing} />
+        Listing={Listing}
+        currentUser={currentUser}/>
     );
   }
 }

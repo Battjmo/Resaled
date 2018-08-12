@@ -24,7 +24,7 @@ class ListingForm extends React.Component {
   handleSubmit(e) {
   e.preventDefault();
   const formData = new FormData();
-  console.log("props.user_id: ", this.props.currentUser);
+
   formData.append('listing[user_id]', this.state.user_id);
   formData.append('listing[title]', this.state.title);
   formData.append('listing[price]', this.state.price);
@@ -49,6 +49,7 @@ class ListingForm extends React.Component {
       console.log(response.responseJSON);
     }
   );
+  this.props.history.push('/');
 }
 
   handleFile(e) {
@@ -65,7 +66,8 @@ class ListingForm extends React.Component {
 
   render () {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
-    console.log(this.props.currentUser);
+    console.log(this.state.user_id);
+    console.log
     return (
       <div>
         <h3>{this.props.formType}</h3>
