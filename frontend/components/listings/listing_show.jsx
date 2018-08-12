@@ -14,8 +14,19 @@ class ListingShow extends React.Component {
 
 
   canEdit() {
-    return (this.props.currentUser.id === this.props.listing.userId);
+    if (!this.props.currentUser) {
+      return false;
+    } else if (this.props.currentUser.id === this.props.listing.userId)
+    { return (
+      <div>
+        <Link className='button white' to={`/api/listings/${this.props.listing.id}/edit`}>Edit Listing</Link>
+        <br/>
+        <br/>
+        <Link className='button white' to={`/`} onClick={this.delete}>Delete Listing</Link>
+      </div>
+    );
   }
+}
 
   delete() {
     this.props.deleteListing(this.props.listing.id);
@@ -27,32 +38,30 @@ class ListingShow extends React.Component {
     const { listing } = this.props;
     if (!listing) {
       return <div>Loading...</div>;
-    } else if (this.canEdit()) {
+    } else {
         return (
-        <div>
-        <h3>{listing.title}</h3>
-        <h3>{listing.price}</h3>
-        <h3>{listing.size}</h3>
-        <h3>{listing.category}</h3>
-        <p>{listing.description}</p>
-        <img src={listing.photoUrl} />
+        <div className="show-container">
+          <div className='listing-image-box'>
+          <img className="listing-image" src={listing.photoUrl} />
+          </div>
+        <div className="listing-info-box">
+        <h3 className="listing-brand">{listing.brand}</h3>
+        <br/>
+        <h3 className="listing">{listing.title}</h3>
+        <br/>
+        <h3 className="listing">{listing.size}</h3>
+        <br/>
+        <h3 className="listing-price">{listing.price}</h3>
+        <br/>
+        <button className="button black">BUY</button>
+        <br/>
+        <p className='description'>{listing.description}</p>
+        <br/>
         <Link to="/">Back to Index</Link>
-        <Link to={`/api/listings/${listing.id}/edit`}>Edit Listing</Link>
-        <Link to={`/`} onClick={this.delete}>Delete Listing</Link>
+        {this.canEdit()}
+        </div>
       </div>
     );
-  } else {
-    return (
-      <div>
-      <h3>{listing.title}</h3>
-      <h3>{listing.price}</h3>
-      <h3>{listing.size}</h3>
-      <h3>{listing.category}</h3>
-      <p>{listing.description}</p>
-      <img src={listing.photoUrl} />
-      <Link to="/">Back to Index</Link>
-    </div>
-  );
   }
 }
 }

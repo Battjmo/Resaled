@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
             <br/>
             <br/>
             <input
-              className="session-submit"
+              className="button black"
               type="submit"
               value={this.props.formType} />
             <br/>
@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
         <button
-          className="dummy-signin"
+          className="button dummy"
           onClick={this.demoSubmit}>sign in with demo account</button>
       </div>
     );
