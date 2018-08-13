@@ -16,6 +16,9 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
+    case 'buy':
+      component= <BuyMeContainer />;
+      break;
     default:
       return null;
   }

@@ -51,7 +51,7 @@ class ListingShow extends React.Component {
         <br/>
         <h3 className="listing">{listing.size}</h3>
         <br/>
-        <h3 className="listing-price">{listing.price}</h3>
+        <h3 className="listing-price">$ {listing.price}</h3>
         <br/>
         <button className="button black">BUY</button>
         <br/>
