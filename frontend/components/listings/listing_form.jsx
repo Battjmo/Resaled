@@ -44,7 +44,7 @@ class ListingForm extends React.Component {
     data: formData,
     contentType: false,
     processData: false
-  })
+  });
   this.props.history.push('/');
 }
 
