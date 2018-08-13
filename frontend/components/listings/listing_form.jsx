@@ -38,13 +38,24 @@ class ListingForm extends React.Component {
 
     formData.append('listing[photo]', this.state.photoFile);
   }
+
+  if (this.props.FormType === "Create Listing") {
   $.ajax({
     url: '/api/listings',
     method: 'POST',
     data: formData,
     contentType: false,
     processData: false
-  });
+  });}
+  else {
+    $.ajax({
+      url: `/api/listings/${this.state.user_id}`,
+      method: 'patch',
+      data: formData,
+      contentType: false,
+      processData: false
+    });
+  }
   this.props.history.push('/');
 }
 

@@ -1,5 +1,6 @@
 .show-container {
   display: flex;
+  margin-right: 200px;
 }
 
 .listing-brand {
