@@ -55,6 +55,7 @@ class ListingShow extends React.Component {
         <br/>
         <button className="button black" onClick={() => this.props.openModal('buy')}>BUY</button>
         <br/>
+        <br/>
         {this.canEdit()}
         <br/>
         <p className='description-title'>DESCRIPTION</p>
