@@ -43,12 +43,7 @@ class ListingForm extends React.Component {
     data: formData,
     contentType: false,
     processData: false
-  }).then(
-    (response) => console.log(response.message),
-    (response) => {
-      console.log(response.responseJSON);
-    }
-  );
+  })
   this.props.history.push('/');
 }
 
@@ -78,8 +73,7 @@ class ListingForm extends React.Component {
           <h3 className="listing-details-title">DETAILS</h3>
           <div className="detail-columns">
             <div className="left-col">
-
-              <select className="detail category_field">
+              <select onChange={this.update('category')}className="detail category_field">
                 <option value="Shirt">Shirt</option>
                 <option value="Jacket">Jacket</option>
                 <option value="Pants">Pants</option>
