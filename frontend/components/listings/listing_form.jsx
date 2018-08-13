@@ -24,6 +24,7 @@ class ListingForm extends React.Component {
   handleSubmit(e) {
   e.preventDefault();
   const formData = new FormData();
+  this.state.category = this.state.category || "shirt";
 
   formData.append('listing[user_id]', this.state.user_id);
   formData.append('listing[title]', this.state.title);
