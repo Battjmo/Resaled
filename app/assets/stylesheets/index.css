@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 }
 
 .listing-link {
@@ -31,6 +32,9 @@
   max-width: 209px;
   max-height: 279px;
   min-height: 279px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .feed-title {

@@ -8,8 +8,9 @@ const Header = ({currentUser, signout, openModal}) => {
     <nav className="header">
       <div>Search</div>
       <Link to="/" className="mainTitle">Resaled</Link>
+
       <div className='headerMenu'>
-      <a onClick={() => openModal('signin')}>Sell Yo Shit</a>
+        <a className="sell-button" onClick={() => openModal('signin')}>Sell</a>
       <a onClick={() => openModal('signin')}>SignIn</a>
         &nbsp;/&nbsp;
      <a onClick={() => openModal('signup')}>SignUp</a>

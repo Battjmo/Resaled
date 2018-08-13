@@ -88,7 +88,8 @@ color: #fff;
   min-height: 140px;
   cursor: pointer;
   margin-bottom: 20px;
-  width: 100%;
+  width: 95%;
+  margin-top: 20px;
 }
 
 .price-input {

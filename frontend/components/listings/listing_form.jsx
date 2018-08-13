@@ -123,12 +123,12 @@ class ListingForm extends React.Component {
           </div>
           </div>
 
-          <label>Description
+          <label className="listing-details-title">DESCRIPTION</label>
             <textarea
               className="listing-description-field"
               value={this.state.description}
               onChange={this.update('description')} />
-          </label>
+
 
           <label className="price-form-label">$
             <input

@@ -38,9 +38,6 @@
 
 .header {
   display: flex;
-  /* flex-wrap: nowrap;
-  align-items: center;
-  align-content: center; */
   justify-content: space-between;
   border-bottom: 1px solid #e1e1e1;
 }
@@ -48,19 +45,13 @@
 .headerMenu {
   display: flex;
   align-items: center;
-  /* justify-content: flex-end;
-
-  width: 25%;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase; */
   margin: 25px;
 
 }
 
 .headerMenu h3 {
-  cursor: default;
+  cursor: pointer;
 }
 
 .mainTitle {
@@ -182,4 +173,5 @@
   color: #000000;
   font-weight: 600;
   text-decoration: none;
+  margin-right: 10px;
 }
