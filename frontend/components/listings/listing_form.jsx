@@ -25,7 +25,6 @@ class ListingForm extends React.Component {
   e.preventDefault();
   const formData = new FormData();
   this.state.category = this.state.category || "shirt";
-
   formData.append('listing[user_id]', this.state.user_id);
   formData.append('listing[title]', this.state.title);
   formData.append('listing[price]', this.state.price);
@@ -37,17 +36,27 @@ class ListingForm extends React.Component {
   if (this.state.photoFile) {
 
     formData.append('listing[photo]', this.state.photoFile);
-  }
+    if (this.props.formType === "Create Listing") {
   $.ajax({
     url: '/api/listings',
     method: 'POST',
     data: formData,
     contentType: false,
     processData: false
-  });
+  });}  else {
+    console.log("the id my guys:", this.state.id);
+    formData.append('listing[id]', this.state.id);
+    $.ajax({
+      url: `/api/listings/${this.state.id}`,
+      method: "PATCH",
+      data: formData,
+      contentType: false,
+      processData: false
+    });
+  }
   this.props.history.push('/');
+  }
 }
-
   handleFile(e) {
    const file = e.currentTarget.files[0];
    const fileReader = new FileReader();

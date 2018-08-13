@@ -6,19 +6,24 @@ class Api::ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    render :index
-    # render json: @listings.errors.full_messages, status: 422
   end
 
   def show
     @listing = Listing.find(params[:id])
     @user = User.find(@listing.user_id)
-    render :show
   end
 
   def edit
-    @list= Listing.find(params[:id])
-    render :edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    if @listing.update(listing_params)
+      redirect_to "/"
+    else
+      render json: @listing.errors.full_messages, status: 422
+    end
   end
 
   def create

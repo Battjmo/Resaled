@@ -17,11 +17,10 @@ const App = () => (
       <Modal />
       </header>
     <Switch>
-      <Route exact path="/api/listings/new" component={CreateListingFormContainer} />
-      <Route exact path="/api/listings/:id/edit" component={EditListingFormContainer} />
-      <Route exact path="/api/listings/:id" component={ListingShowContainer}/>  
-      <Route exact path="/" component={ListingsIndexContainer} />
-      <Redirect to='/' />
+      <Route path="/api/listings/new" component={CreateListingFormContainer} />
+      <Route path="/api/listings/:id/edit" component={EditListingFormContainer} />
+      <Route path="/api/listings/:id" component={ListingShowContainer}/>
+      <Route component={ListingsIndexContainer} />
     </Switch>
   </div>
 );
