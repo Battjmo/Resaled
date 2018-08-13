@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignupFormContainer from './signup_form_container';
 import SigninFormContainer from './signin_form_container';
+import BuyMeContainer from './buy_me_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -17,7 +18,7 @@ function Modal({modal, closeModal}) {
       component = <SignupFormContainer />;
       break;
     case 'buy':
-      component= <BuyMe />;
+      component= <BuyMeContainer />;
       break;
     default:
       return null;

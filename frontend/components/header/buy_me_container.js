@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import buyMe from './buy-me';
+import BuyMe from './buy_me';
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
@@ -9,4 +9,4 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 
-export default connect(mapStateToProps, null)(buyMe);
+export default connect(mapStateToProps, null)(BuyMe);
