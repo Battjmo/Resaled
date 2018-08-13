@@ -8,7 +8,7 @@
 
 .index {
   padding: 27px 27px 0;
-  width: 970px;
+  width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -44,4 +44,39 @@
   font-size: 16px;
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.listing-item-top-row {
+  padding: 1px 8px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listing-item-brand {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 1rem;
+  width: 70%;
+  white-space: nowrap;
+}
+
+.listing-item-title {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: inherit;
+  text-transform: capitalize;
+
+}
+
+.listing-item-price {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  margin-top: 8px;
 }

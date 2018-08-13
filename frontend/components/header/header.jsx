@@ -6,7 +6,6 @@ const Header = ({currentUser, signout, openModal}) => {
   //If there's no user...
   const sessionLinks = () => (
     <nav className="header">
-      <div>Search</div>
       <Link to="/" className="mainTitle">Resaled</Link>
 
       <div className='headerMenu'>

@@ -61,7 +61,6 @@ class ListingShow extends React.Component {
         <p className='description-title'>DESCRIPTION</p>
         <p className='description'>{listing.description}</p>
         <br/>
-        <Link to="/">Back to Index</Link>
 
         </div>
       </div>

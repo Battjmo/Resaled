@@ -17,16 +17,17 @@
 }
 
 .listing-info-box {
-  width: 25%;
+  width: 35%;
   flex: 4;
 }
 
 .listing-image-box {
-  width: 70%;
+  width: 60%;
   height: auto;
   margin-right: 0;
   box-sizing: border-box;
   position: relative;
+  margin-left: 100px;
 }
 
 .description-title {

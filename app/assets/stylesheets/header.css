@@ -60,7 +60,8 @@
   text-align: center;
   flex: 1 0 auto;
   letter-spacing: 4px;
-  margin: 20px 25px 20px 215px;
+  margin: 20px 25px 20px 220px;
+  line-height: 40px;
   text-decoration: none;
   cursor: pointer;
   color: #1a1a1a;
@@ -135,6 +136,7 @@
 .white {
   color: #1a1a1a;
   background-color: #fff;
+  line-height: 38px;
 }
 
 .dummy {
