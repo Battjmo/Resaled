@@ -44,7 +44,6 @@ class ListingForm extends React.Component {
     contentType: false,
     processData: false
   });}  else {
-    console.log("the id my guys:", this.state.id);
     formData.append('listing[id]', this.state.id);
     $.ajax({
       url: `/api/listings/${this.state.id}`,

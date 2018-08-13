@@ -1,11 +1,9 @@
 import React from 'react';
 
 const BuyMe = ({currentUser}) => {
-  console.log(currentUser.username);
-  const username = (currentUser.username || "Esteemed Guest");
   return(
   <div>
-    <h3>Hello, {username}!</h3>
+    <h3>Hello, {currentUser.username}!</h3>
     <br/>
     <p>Unfortunately none of the items here on Resaled are actually for sale!
     We can only offer you two things: the plesasure of uploading and perusing
@@ -13,7 +11,7 @@ const BuyMe = ({currentUser}) => {
 
     If you're interested, please select a means of contacting me below, and
     thanks for visiting!</p>
-  
+
   <br/>
   <br/>
 
