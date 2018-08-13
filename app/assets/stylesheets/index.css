@@ -29,7 +29,7 @@
 }
 
 .listing-index-image {
-  max-width: 209px;
+  max-width: 100%;
   max-height: 279px;
   min-height: 279px;
   padding-bottom: 15px;
@@ -51,6 +51,7 @@
   margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
+  max-width: 80%;
 }
 
 .listing-item-brand {
@@ -71,6 +72,7 @@
   font-weight: 400;
   text-align: inherit;
   text-transform: capitalize;
+  margin-left: 8px;
 
 }
 
@@ -79,4 +81,5 @@
   flex: 1;
   align-items: center;
   margin-top: 8px;
+  margin-left: 8px;
 }
