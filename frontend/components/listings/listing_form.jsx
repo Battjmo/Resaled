@@ -30,6 +30,18 @@ class ListingForm extends React.Component {
     }
   }
 
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li className="auth-error" key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -93,14 +105,15 @@ class ListingForm extends React.Component {
         <form className="listing-form" onSubmit={this.handleSubmit}>
 
           <div className="listing-details">
-          <h3 className="listing-details-title">DETAILS</h3>
+          <h3 className="listing-details-title">ALL FIELDS REQUIRED</h3>
+          <h3 className="listing-details-title">DETAILS </h3>
           <div className="detail-columns">
             <div className="left-col">
               <select onChange={this.update('category')}className="detail category_field">
                 <option value="Shirt">Shirt</option>
                 <option value="Jacket">Jacket</option>
                 <option value="Pants">Pants</option>
-                <option value="Shoes">Shoes</option>
+                  <option value="Shoes">Shoes</option>
                 <option value="Jewelery">Jewelery</option>
                 <option value="Luggage">Luggage</option>
                 <option value="Other">Other</option>

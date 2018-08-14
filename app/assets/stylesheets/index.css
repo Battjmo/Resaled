@@ -65,12 +65,12 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-right: 1rem;
-  width: 70%;
+  width: 100%;
   white-space: nowrap;
 }
 

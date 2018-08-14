@@ -17,8 +17,8 @@ const App = () => (
       <Modal />
       </header>
     <Switch>
-      <Route exact path="/listings/new" component={CreateListingFormContainer} />
-      <Route exact path="/listings/:id/edit" component={EditListingFormContainer} />
+      <AuthRoute exact path="/listings/new" component={CreateListingFormContainer} />
+      <AuthRoute exact path="/listings/:id/edit" component={EditListingFormContainer} />
       <Route exact path="/listings/:id" component={ListingShowContainer}/>
       <Route path="/" component={ListingsIndexContainer} />
     </Switch>

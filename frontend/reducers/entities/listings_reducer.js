@@ -3,7 +3,8 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_LISTING,
   RECEIVE_LISTINGS,
-  REMOVE_LISTING
+  REMOVE_LISTING,
+  RECEIVE_LISTING_ERRORS
 } from '../../actions/listing_actions';
 
 const listingsReducer = (state = {}, action) => {

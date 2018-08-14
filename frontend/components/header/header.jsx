@@ -24,7 +24,7 @@ const Header = ({currentUser, signout, openModal}) => {
       <div className='headerMenu'>
       <Link className="sell-button" to="/listings/new">Sell</Link>
       <br/>
-      <a className="logoutButton" onClick={signout}>Sign Out</a>
+      <a href="/" className="logoutButton" onClick={signout}>Sign Out</a>
       </div>
     </nav>
   );

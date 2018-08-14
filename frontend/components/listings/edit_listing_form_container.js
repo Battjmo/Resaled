@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import ListingForm from './listing_form';
 import { fetchListing, updateListing } from '../../actions/listing_actions';
 
-const mapStateToProps = ({ session, entities: { users, Listings } }, ownProps) => {
+const mapStateToProps = ({ session, errors, entities: { users, Listings } }, ownProps) => {
   const Listing = Listings[ownProps.match.params.id];
   const currentUser = users[session.id];
   const formType = 'Update Listing';
+  errors = errors.listings;
 
-  return { Listing, currentUser, formType };
+  return { Listing, currentUser, formType, errors };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -24,6 +25,7 @@ class EditListingForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log("nextprops:", nextProps);
     if (this.props.Listing.id != nextProps.match.params.id) {
       this.props.fetchListing(nextProps.match.params.id);
     }

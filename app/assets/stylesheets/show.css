@@ -1,6 +1,7 @@
 .show-container {
   display: flex;
   margin-right: 200px;
+  margin-top: 75px;
 }
 
 .listing-brand {
@@ -16,7 +17,7 @@
 }
 
 .listing-image {
-  width: auto;
+  width: 700px;
   max-width: 100%;
   height: 700px;
 }
