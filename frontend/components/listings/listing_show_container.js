@@ -3,11 +3,10 @@ import ListingShow from './listing_show';
 import { openModal } from '../../actions/modal_actions';
 import { deleteListing, fetchListing } from '../../actions/listing_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  listing: state.entities.Listings[ownProps.match.params.id],
-  currentUser: state.entities.users[state.session.id],
+const mapStateToProps = (state, ownProps) => {
+  return ({listing: state.entities.Listings[ownProps.match.params.id]});
 
-});
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchListing: id => dispatch(fetchListing(id)),

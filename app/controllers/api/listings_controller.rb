@@ -20,7 +20,7 @@ class Api::ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update(listing_params)
-      redirect_to "/"
+      render :show
     else
       render json: @listing.errors.full_messages, status: 422
     end
@@ -29,7 +29,6 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
-      # render :index
       render :show
     else
       render json: @listing.errors.full_messages, status: 422

@@ -20,12 +20,13 @@ const mapDispatchToProps = dispatch => {
 
 class EditListingForm extends React.Component {
   componentDidMount() {
-    this.props.fetchListing(this.props.match.params.listingId);
+    this.props.fetchListing(this.props.match.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.Listing.id !== nextProps.match.params.listingId) {
-      this.props.fetchListing(nextProps.match.params.listingId);
+  
+    if (this.props.Listing.id != nextProps.match.params.id) {
+      this.props.fetchListing(nextProps.match.params.id);
     }
   }
 

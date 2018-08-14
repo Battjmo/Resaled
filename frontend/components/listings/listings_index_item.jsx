@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 const ListingsIndexItem = (props) => {
   return (
-    <Link className="listing-link" to={`/api/listings/${props.id}`}>
+    <Link className="listing-link" to={`/listings/${props.id}`}>
     <li className="index-listing" id={props.id}>
       <img className="listing-index-image" src={props.photo}/>
       <div className="listing-item-top-row">

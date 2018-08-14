@@ -7,6 +7,14 @@ componentDidMount() {
   this.props.fetchListings();
 }
 
+componentWillReceiveProps(newProps) {
+  debugger
+  if (this.props.Listings.length !== newProps.Listings.length ){
+    this.props.fetchListings();
+  }
+
+}
+
 render() {
   let listingsList = this.props.Listings;
   listingsList = listingsList.map(listing => (

@@ -22,39 +22,44 @@ class ListingForm extends React.Component {
   // }
 
   handleSubmit(e) {
-  e.preventDefault();
-  const formData = new FormData();
-  this.state.category = this.state.category || "shirt";
-  formData.append('listing[user_id]', this.state.user_id);
-  formData.append('listing[title]', this.state.title);
-  formData.append('listing[price]', this.state.price);
-  formData.append('listing[size]', this.state.size);
-  formData.append('listing[category]', this.state.category);
-  formData.append('listing[brand]', this.state.brand);
-  formData.append('listing[description]', this.state.description);
+    e.preventDefault();
 
-  if (this.state.photoFile) {
+    const formData = new FormData();
+    this.state.category = this.state.category || "shirt";
+    formData.append('listing[user_id]', this.state.userId);
+    formData.append('listing[title]', this.state.title);
+    formData.append('listing[price]', this.state.price);
+    formData.append('listing[size]', this.state.size);
+    formData.append('listing[category]', this.state.category);
+    formData.append('listing[brand]', this.state.brand);
+    formData.append('listing[description]', this.state.description);
 
-    formData.append('listing[photo]', this.state.photoFile);
-    if (this.props.formType === "Create Listing") {
-  $.ajax({
-    url: '/api/listings',
-    method: 'POST',
-    data: formData,
-    contentType: false,
-    processData: false
-  });}  else {
-    formData.append('listing[id]', this.state.id);
-    $.ajax({
-      url: `/api/listings/${this.state.id}`,
-      method: "PATCH",
-      data: formData,
-      contentType: false,
-      processData: false
-    });
-  }
-  this.props.history.push('/');
-  }
+    if (this.state.photoUrl) {
+
+      formData.append('listing[photo]', this.state.photoFile);
+
+      if (this.props.formType === "Create Listing") {
+
+        $.ajax({
+          url: '/api/listings',
+          method: 'POST',
+          data: formData,
+          contentType: false,
+          processData: false
+        }).then(this.props.history.push('/'));
+      } else {
+
+        formData.append('listing[id]', this.state.id);
+        $.ajax({
+          url: `/api/listings/${this.state.id}`,
+          method: "PATCH",
+          data: formData,
+          contentType: false,
+          processData: false
+        }).then(this.props.history.push('/'));
+      }
+
+    }
 }
   handleFile(e) {
    const file = e.currentTarget.files[0];

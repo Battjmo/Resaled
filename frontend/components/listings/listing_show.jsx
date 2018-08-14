@@ -10,6 +10,10 @@ class ListingShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchListing(this.props.match.params.id);
+    // .then((listing) => (
+    //   fetchUser(listing.user_id)
+    // )
+    // )
   }
 
   canEdit() {
@@ -18,7 +22,7 @@ class ListingShow extends React.Component {
     } else if (this.props.currentUser.id === this.props.listing.userId)
     { return (
       <div>
-        <Link className='button white' to={`/api/listings/${this.props.listing.id}/edit`}>Edit Listing</Link>
+        <Link className='button white' to={`/listings/${this.props.listing.id}/edit`}>Edit Listing</Link>
         <br/>
         <br/>
         <Link className='button white' to={`/`} onClick={this.delete}>Delete Listing</Link>
