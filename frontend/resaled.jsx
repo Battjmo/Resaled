@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { signup, signin, signout } from './actions/session_actions';
 import { fetchListings } from './actions/listing_actions';
+import { fetchUser } from './actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.dispatch = store.dispatch;
   window.getState = store.dispatch;
-  window.fetchListings = fetchListings;
+
 
 
   ReactDOM.render(<Root store={store} />, root);

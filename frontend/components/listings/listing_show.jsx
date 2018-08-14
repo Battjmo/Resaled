@@ -6,14 +6,14 @@ class ListingShow extends React.Component {
     super(props);
     this.canEdit = this.canEdit.bind(this);
     this.delete = this.delete.bind(this);
+    this.state = {};
   }
 
   componentDidMount() {
-    this.props.fetchListing(this.props.match.params.id);
-    // .then((listing) => (
-    //   fetchUser(listing.user_id)
-    // )
-    // )
+    this.props.fetchListing(this.props.match.params.id)
+    .then(Listing => this.props.fetchUser(Object.values(Listing)[1].userId))
+    .then(user => this.setState({listingUsername: Object.values(user)[1].username,
+    listingUserId: Object.values(user)[1].id}));
   }
 
   canEdit() {
@@ -62,10 +62,10 @@ class ListingShow extends React.Component {
         <br/>
         {this.canEdit()}
         <br/>
+        {this.state.listingUsername}
         <p className='description-title'>DESCRIPTION</p>
         <p className='description'>{listing.description}</p>
         <br/>
-
         </div>
       </div>
     );

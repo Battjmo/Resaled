@@ -8,7 +8,6 @@ componentDidMount() {
 }
 
 componentWillReceiveProps(newProps) {
-  debugger
   if (this.props.Listings.length !== newProps.Listings.length ){
     this.props.fetchListings();
   }
