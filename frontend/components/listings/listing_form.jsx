@@ -30,17 +30,17 @@ class ListingForm extends React.Component {
     }
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li className="auth-error" key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li className="auth-error" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -55,31 +55,33 @@ class ListingForm extends React.Component {
     formData.append('listing[brand]', this.state.brand);
     formData.append('listing[description]', this.state.description);
 
-    if (this.state.photoUrl) {
+    if ((this.props.formType === "Create Listing") && !this.state.photoFile) {
+      return;
+    }
+    if (this.state.photoFile) {
 
       formData.append('listing[photo]', this.state.photoFile);
+    }
 
-      if (this.props.formType === "Create Listing") {
+    if (this.props.formType === "Create Listing") {
 
-        $.ajax({
-          url: '/api/listings',
-          method: 'POST',
-          data: formData,
-          contentType: false,
-          processData: false
-        }).then(listing => this.props.history.push(`/listings/${listing.id}`));
-      } else {
+      $.ajax({
+        url: '/api/listings',
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false
+      }).then(listing => this.props.history.push(`/listings/${listing.id}`));
+    } else {
 
-        formData.append('listing[id]', this.state.id);
-        $.ajax({
-          url: `/api/listings/${this.state.id}`,
-          method: "PATCH",
-          data: formData,
-          contentType: false,
-          processData: false
-        }).then(listing => this.props.history.push(`/listings/${listing.id}`));
-      }
-
+      formData.append('listing[id]', this.state.id);
+      $.ajax({
+        url: `/api/listings/${this.state.id}`,
+        method: "PATCH",
+        data: formData,
+        contentType: false,
+        processData: false
+      }).then(listing => this.props.history.push(`/listings/${listing.id}`));
     }
 }
   handleFile(e) {

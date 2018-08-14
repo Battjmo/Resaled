@@ -13,7 +13,7 @@ const ListingsIndexItem = (props) => {
         <div className="listing-item-title">{props.listing.title}</div>
         <div className="listing-item-price">$ {props.listing.price}</div>
     </li>
-          </Link>
+      </Link>
   );
 };
 

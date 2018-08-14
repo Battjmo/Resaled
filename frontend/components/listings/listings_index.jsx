@@ -7,12 +7,12 @@ componentDidMount() {
   this.props.fetchListings();
 }
 
-componentWillReceiveProps(newProps) {
-  if (this.props.Listings.length !== newProps.Listings.length ){
-    this.props.fetchListings();
-  }
-
-}
+// componentWillReceiveProps(newProps) {
+//   if (this.props.Listings.length !== newProps.Listings.length ){
+//     this.props.fetchListings();
+//   }
+//
+// }
 
 render() {
   let listingsList = this.props.Listings;
