@@ -108,6 +108,7 @@ class ListingForm extends React.Component {
 
           <div className="listing-details">
           <h3 className="listing-details-title">ALL FIELDS REQUIRED</h3>
+          {this.renderErrors()}
           <h3 className="listing-details-title">DETAILS </h3>
           <div className="detail-columns">
             <div className="left-col">
