@@ -17,6 +17,7 @@ class ListingShow extends React.Component {
   }
 
   canEdit() {
+    console.log(this.props.currentUser.id);
     if (!this.props.currentUser) {
       return false;
     } else if (this.props.currentUser.id === this.props.listing.userId)
