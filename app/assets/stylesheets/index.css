@@ -80,6 +80,9 @@
   text-align: inherit;
   text-transform: capitalize;
   margin-left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
 }
 

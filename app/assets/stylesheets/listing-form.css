@@ -77,10 +77,6 @@ color: #fff;
   width: 375px;
 }
 
-.right {
-  transform: rotate(-45deg);
-}
-
 .listing-description-field {
   border: 1px solid #666;
   border-radius: 1.5px;
@@ -142,4 +138,10 @@ color: #fff;
   background-color: #1a1a1a;
   border: 1px solid #1a1a1a;
 
+}
+
+
+.photo-warning {
+  color: #a142f4;
+  font-size: 14px;
 }

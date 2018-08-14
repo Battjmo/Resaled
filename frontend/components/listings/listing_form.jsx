@@ -6,6 +6,7 @@ class ListingForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.updateWarning = this.updateWarning.bind(this);
     this.state = this.props.Listing;
   }
 
@@ -15,11 +16,19 @@ class ListingForm extends React.Component {
     };
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   this.props.action(this.state).then(() => this.props.history.push('/'));
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.Listing.id != nextProps.match.params.id) {
+      this.props.fetchListing(nextProps.match.params.id);
+    }
+  }
+
+  updateWarning() {
+    if (this.props.formType === "Update Listing") {
+      return (
+        <p className="photo-warning">You must add a photo</p>
+      );
+    }
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -148,7 +157,7 @@ class ListingForm extends React.Component {
           </label>
 
           <h3>UPLOAD IMAGE </h3>
-
+          {this.updateWarning()}
           <input type="file" onChange={this.handleFile} />
 
           <br/>

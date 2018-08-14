@@ -24,7 +24,6 @@ class EditListingForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-  
     if (this.props.Listing.id != nextProps.match.params.id) {
       this.props.fetchListing(nextProps.match.params.id);
     }

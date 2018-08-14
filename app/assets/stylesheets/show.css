@@ -5,11 +5,15 @@
 
 .listing-brand {
   text-transform: uppercase;
+  text-overflow: ellipsis;
   font-weight: 600;
   font-size: 16px;
   line-height: 25px;
 }
 
+.listing {
+  width: 100%;
+}
 
 .listing-image {
   width: auto;
@@ -20,6 +24,7 @@
 .listing-info-box {
   width: 35%;
   flex: 4;
+  word-wrap: break-word;
 }
 
 .listing-image-box {
@@ -39,4 +44,8 @@
 
 .email-pic {
   width: 34px;
+}
+
+.seller-box {
+  border-top: 1px solid #e1e1e1;
 }

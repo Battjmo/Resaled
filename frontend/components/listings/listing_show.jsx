@@ -17,7 +17,6 @@ class ListingShow extends React.Component {
   }
 
   canEdit() {
-    console.log(this.props.currentUser.id);
     if (!this.props.currentUser) {
       return false;
     } else if (this.props.currentUser.id === this.props.listing.userId)
@@ -49,24 +48,31 @@ class ListingShow extends React.Component {
           <img className="listing-image" src={listing.photoUrl} />
           </div>
         <div className="listing-info-box">
-        <h3 className="listing-brand">{listing.brand}</h3>
-        <br/>
-        <h3 className="listing">{listing.title}</h3>
-        <br/>
-        <h3 className="listing">{listing.size}</h3>
-        <br/>
-        <h3 className="listing-price">$ {listing.price}</h3>
-        <br/>
-        <br/>
-        <button className="button black" onClick={() => this.props.openModal('buy')}>BUY</button>
-        <br/>
-        <br/>
-        {this.canEdit()}
-        <br/>
-        {this.state.listingUsername}
-        <p className='description-title'>DESCRIPTION</p>
-        <p className='description'>{listing.description}</p>
-        <br/>
+          <h3 className="listing-brand">{listing.brand}</h3>
+          <br/>
+          <h3 className="listing">{listing.title}</h3>
+          <br/>
+          <h3 className="listing">{listing.size}</h3>
+          <br/>
+          <h3 className="listing-price">$ {listing.price}</h3>
+          <br/>
+          <br/>
+          <button className="button black" onClick={() => this.props.openModal('buy')}>BUY</button>
+          <br/>
+          <br/>
+          {this.canEdit()}
+          <br/>
+          <p className='description-title'>DESCRIPTION</p>
+          <p className='description'>{listing.description}</p>
+          <br/>
+          <div className="seller-box">
+            <br/>
+            <br/>
+            <p className="description-title">SELLER</p>
+            <br />
+            {this.state.listingUsername}
+
+          </div>
         </div>
       </div>
     );
