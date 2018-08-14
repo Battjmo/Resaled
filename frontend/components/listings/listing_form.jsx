@@ -46,7 +46,7 @@ class ListingForm extends React.Component {
           data: formData,
           contentType: false,
           processData: false
-        }).then(this.props.history.push('/'));
+        }).then(listing => this.props.history.push(`/listings/${listing.id}`));
       } else {
 
         formData.append('listing[id]', this.state.id);
