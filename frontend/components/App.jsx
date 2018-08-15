@@ -7,6 +7,7 @@ import { Route, DefaultRoute, Redirect, Switch, HashRouter } from 'react-router-
 import ListingsIndexContainer from './listings/listings_index_container';
 import ListingShowContainer from './listings/listing_show_container';
 import UserShowContainer from './users/user_show_container';
+import UserEditContainer from './users/user_edit_container';
 import EditListingFormContainer from './listings/edit_listing_form_container';
 import CreateListingFormContainer from './listings/create_listing_form_container';
 
@@ -23,6 +24,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/listings/new" component={CreateListingFormContainer} />
       <AuthRoute exact path="/listings/:id/edit" component={EditListingFormContainer} />
+      <AuthRoute exact path="/users/id/edit" component={UserEditContainer} />
       <Route exact path="/users/:id" component={UserShowContainer} />
       <Route exact path="/listings/:id" component={ListingShowContainer}/>
       <Route path="/" component={ListingsIndexContainer} />

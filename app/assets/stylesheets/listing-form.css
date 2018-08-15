@@ -157,3 +157,9 @@ color: #fff;
 .listing-error {
   color: #c40d0d;
 }
+
+.user-show-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}

@@ -8,6 +8,7 @@ import ListingsIndexItem from '../listings/listings_index_item';
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
+    this.canEdit = this.canEdit.bind(this);
   }
 
   componentDidMount() {
@@ -29,10 +30,8 @@ class UserShow extends React.Component {
       } else if (this.props.currentUser.id === this.props.user.id)
       { return (
         <div>
-          <Link className='button white' to={`/users/${this.props.listing.id}/edit`}>Edit Listing</Link>
+          <Link className='button white' to={`/users/${this.props.user.id}/edit`}>Edit</Link>
           <br/>
-          <br/>
-          <Link className='button white' to={`/`} onClick={this.delete}>Delete Listing</Link>
         </div>
       );
     }
@@ -40,6 +39,7 @@ class UserShow extends React.Component {
 
 
   render() {
+    console.log("user show props: ", this.props)
     let listingsList = this.props.userListings;
     listingsList = listingsList.map(listing => (
       <ListingsIndexItem
@@ -55,6 +55,7 @@ class UserShow extends React.Component {
         return (
         <div className="user-show-container">
           <p> {user.username}</p>
+          {this.canEdit()}
 
             <ul className="index">
               { listingsList }
