@@ -1,7 +1,7 @@
-import { RECEIVE_USER_ERRORS, RECEIVE_USER} from '../../actions/listing_actions';
+import { RECEIVE_USER_ERRORS, RECEIVE_USER} from '../../actions/user_actions';
 import merge from 'lodash/merge';
 
-const listingErrorsReducer = (state = [], action) => {
+const userErrorsReducer = (state = [], action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -18,4 +18,4 @@ const listingErrorsReducer = (state = [], action) => {
   }
 };
 
-export default listingErrorsReducer;
+export default userErrorsReducer;

@@ -39,7 +39,6 @@ class UserShow extends React.Component {
 
 
   render() {
-    console.log("user show props: ", this.props)
     let listingsList = this.props.userListings;
     listingsList = listingsList.map(listing => (
       <ListingsIndexItem

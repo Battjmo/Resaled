@@ -7,12 +7,26 @@ class UserEditForm extends React.Component{
     this.update = this.update.bind(this);
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  renderErrors() {
+
+    return(
+      <ul className="listing-error-list">
+        {this.props.errors.map((error, i) => (
+          <li className="listing-error" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   componentDidMount() {
@@ -28,25 +42,26 @@ class UserEditForm extends React.Component{
     }
   }
 
-    // const formData = new FormData();
-    // this.state.location = this.state.location || "United States";
-    // formData.append('user[id]', this.state.id);
-    // formData.append('user[username]', this.state.username);
-    // formData.append('user[email]', this.state.email);
-    // formData.append('user[height]', this.state.height);
-    // formData.append('user[weight]', this.state.weight);
-    // formData.append('user[location]', this.state.location);
-    // formData.append('user[description]', this.state.description);
+
     handleSubmit(e) {
+      // const formData = new FormData();
+      // this.state.location = this.state.location || "United States";
+      // formData.append('user[id]', this.state.id);
+      // formData.append('user[username]', this.state.username);
+      // formData.append('user[email]', this.state.email);
+      // formData.append('user[height]', this.state.height);
+      // formData.append('user[weight]', this.state.weight);
+      // formData.append('user[location]', this.state.location);
+      // formData.append('user[description]', this.state.description);
       e.preventDefault();
-      this.state.country = this.state.country || "United States"
+      this.state.country = this.state.country || "United States";
       const user = Object.assign({}, this.state);
       this.props.updateUser(user).then(({user}) => this.props.history.push(`/users/${user.id}`));
     }
 
 
 render() {
-  console.log(this.props);
+  console.log("dem props: ", this.props);
   return(
     <div>
   <p>Here's the user edit page!</p>
@@ -113,7 +128,7 @@ render() {
       </div>
     </div>
   </div>
-
+    {this.renderErrors()}
     <input className="listing-submit" type="submit" value="Update Profile" />
   </form>
 </div>
