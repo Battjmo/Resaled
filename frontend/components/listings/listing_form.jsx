@@ -22,10 +22,6 @@ class ListingForm extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    this.props.clearErrors();
-  }
-
   renderErrors() {
     return(
       <ul className="listing-error-list">
