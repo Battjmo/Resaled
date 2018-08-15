@@ -10,7 +10,6 @@ const mapStateToProps = ({session, errors, entities: { users } }) => {
   const formType = "Create Listing";
   errors = errors.listing;
 
-
   return { Listing, formType, photoFile, errors };
 };
 

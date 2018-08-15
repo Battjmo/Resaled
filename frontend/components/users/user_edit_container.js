@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import UserEditForm from './user_edit_form';
-import {fetchUser, updateUser, receiveUserErrors } from '../../action/user_actions';
+import UserEditForm from './user_edit';
+import {fetchUser, updateUser, receiveUserErrors } from '../../actionS/user_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.users[ownProps.match.params.id]
+  user: state.entities.users[ownProps.match.params.id]
 });
 
 const mapDispatchToProps = dispatch => {

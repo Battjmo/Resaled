@@ -24,7 +24,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/listings/new" component={CreateListingFormContainer} />
       <AuthRoute exact path="/listings/:id/edit" component={EditListingFormContainer} />
-      <AuthRoute exact path="/users/id/edit" component={UserEditContainer} />
+      <AuthRoute exact path="/users/:id/edit" component={UserEditContainer} />
       <Route exact path="/users/:id" component={UserShowContainer} />
       <Route exact path="/listings/:id" component={ListingShowContainer}/>
       <Route path="/" component={ListingsIndexContainer} />
