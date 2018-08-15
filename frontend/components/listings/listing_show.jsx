@@ -6,7 +6,7 @@ class ListingShow extends React.Component {
     super(props);
     this.canEdit = this.canEdit.bind(this);
     this.delete = this.delete.bind(this);
-    this.state = this.props.listing;
+    this.state = {};
   }
 
   componentDidMount() {
@@ -38,7 +38,6 @@ class ListingShow extends React.Component {
 
 
   render() {
-    console.log("listing show props: ", this.props);
     const { listing } = this.props;
     if (!listing) {
       return <div>Loading...</div>;

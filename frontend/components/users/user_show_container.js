@@ -8,7 +8,7 @@ import {withRouter} from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.entities.users[ownProps.match.params.id],
+  user: state.entities.users[parseInt(ownProps.match.params.id, 10)],
   Listings: Object.keys(state.entities.Listings).map(id => state.entities.Listings[id]),
   userListings: getUserListings(state, ownProps.match.params.id)
 });
