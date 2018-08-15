@@ -32,11 +32,12 @@ export const deleteListing = (listingId) => (
   })
 );
 
-export const updateListing = (listing) => (
+export const updateListing = (formData) => (
   $.ajax({
-    method: "patch",
-    dataType: "json",
-    url: `/api/listings/${listing.id}`,
-    data: { listing }
+    url: `/api/listings/${formData.id}`,
+    method: "PATCH",
+    data: formData,
+    contentType: false,
+    processData: false
   })
 );

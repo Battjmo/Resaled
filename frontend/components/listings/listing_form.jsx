@@ -63,7 +63,8 @@ class ListingForm extends React.Component {
     }
 
     if (this.props.formType === "Create Listing") {
-      this.props.action(formData).then(newListing => this.props.history.push(`listings/${newlisting.id}`));
+      this.props.action(formData).then(result => console.log(result));
+      // .then(newListing => this.props.history.push(`listings/${newlisting.id}`));
     } else {
 
       formData.append('listing[id]', this.state.id);
