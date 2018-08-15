@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ListingForm from './listing_form';
-import { fetchListing, updateListing } from '../../actions/listing_actions';
+import { fetchListing, updateListing, receiveListingErrors } from '../../actions/listing_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = ({ session, errors, entities: { users, Listings } }, ownProps) => {
@@ -17,12 +17,14 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchListing: id => dispatch(fetchListing(id)),
     action: listing => dispatch(updateListing(listing)),
+    clearErrors: () => dispatch(receiveListingErrors([]))
   };
 };
 
 class EditListingForm extends React.Component {
   componentDidMount() {
     this.props.fetchListing(this.props.match.params.id);
+    console.log("edit entry props: ", this.props);
   }
 
   componentWillReceiveProps(nextProps) {

@@ -6,7 +6,6 @@ class ListingForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.updateWarning = this.updateWarning.bind(this);
     this.state = this.props.Listing;
     this.errors = this.props.errors;
   }
@@ -23,17 +22,16 @@ class ListingForm extends React.Component {
     }
   }
 
-  updateWarning() {
-      return (
-        <p className="auth-error">You must add a photo</p>
-      );
-    }
+  componentWillUnmount() {
+    console.log("unMountProps: ", this.props);
+    this.props.clearErrors();
+  }
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="listing-error-list">
         {this.props.errors.map((error, i) => (
-          <li className="auth-error" key={`error-${i}`}>
+          <li className="listing-error" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -43,7 +41,6 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     const formData = new FormData();
     this.state.category = this.state.category || "shirt";
     formData.append('listing[user_id]', this.state.userId);
@@ -61,7 +58,6 @@ class ListingForm extends React.Component {
     if (this.props.formType === "Create Listing") {
       this.props.action(formData).then(({Listing}) => this.props.history.push(`/listings/${Listing.id}`));
     } else {
-      console.log("formData: ", formData);
       formData.append('listing[id]', this.state.id);
       this.props.action(formData).then(({Listing}) => this.props.history.push(`/listings/${Listing.id}`));
   }
@@ -155,7 +151,7 @@ class ListingForm extends React.Component {
           </label>
 
           <h3>UPLOAD IMAGE </h3>
-          {this.updateWarning()}
+          <p className="photo-warning">You must add a photo!</p>
           <input type="file" onChange={this.handleFile} />
 
           <br/>

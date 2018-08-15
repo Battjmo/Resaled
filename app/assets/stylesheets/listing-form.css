@@ -137,11 +137,23 @@ color: #fff;
   color: #fff;
   background-color: #1a1a1a;
   border: 1px solid #1a1a1a;
-
 }
 
-
 .photo-warning {
-  color: #a142f4;
-  font-size: 14px;
+  color: #c40d0d;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.listing-error-list {
+  list-style-type: disc;
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.listing-error {
+  color: #c40d0d;
 }

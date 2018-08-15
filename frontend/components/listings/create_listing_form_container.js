@@ -15,7 +15,8 @@ const mapStateToProps = ({session, errors, entities: { users } }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  action: listing => dispatch(createListing(listing))
+  action: listing => dispatch(createListing(listing)),
+  clearErrors: () => dispatch(receiveListingErrors([]))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingForm);
