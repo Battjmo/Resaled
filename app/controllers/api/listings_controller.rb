@@ -18,7 +18,6 @@ class Api::ListingsController < ApplicationController
 
   def update
     @listing = Listing.find(params[:id])
-    debugger
     if @listing.update(listing_params)
       render :show
     else

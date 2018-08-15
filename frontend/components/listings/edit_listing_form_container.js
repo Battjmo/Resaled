@@ -34,7 +34,7 @@ class EditListingForm extends React.Component {
   }
 
   render() {
-    const { action, formType, Listing, currentUser } = this.props;
+    const { action, formType, Listing, currentUser, errors } = this.props;
     if (!Listing) {
       return null;
     }
@@ -44,7 +44,8 @@ class EditListingForm extends React.Component {
         formType={formType}
         Listing={Listing}
         currentUser={currentUser}
-        photo={Listing.photoURL}/>
+        photo={Listing.photoURL}
+        errors={errors}/>
     );
   }
 }

@@ -1,8 +1,9 @@
 import React from 'react';
+
 import HeaderContainer from './header/header_container';
 import SignupFormContainer from './header/signup_form_container';
 import SigninFormContainer from './header/signin_form_container';
-import { Route, DefaultRoute, Redirect, Switch } from 'react-router-dom';
+import { Route, DefaultRoute, Redirect, Switch, HashRouter } from 'react-router-dom';
 import ListingsIndexContainer from './listings/listings_index_container';
 import ListingShowContainer from './listings/listing_show_container';
 import UserShowContainer from './users/user_show_container';
@@ -13,6 +14,7 @@ import {AuthRoute} from '../util/route_util';
 import Modal from './header/modal';
 
 const App = () => (
+  <HashRouter>
   <div>
     <header>
       <Route path="/" component={HeaderContainer} />
@@ -26,6 +28,7 @@ const App = () => (
       <Route path="/" component={ListingsIndexContainer} />
     </Switch>
   </div>
+  </HashRouter>
 );
 
 export default App;

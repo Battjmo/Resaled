@@ -15,6 +15,7 @@ componentDidMount() {
 // }
 
 render() {
+  console.log("props: ", this.props.Listings);
   let listingsList = this.props.Listings;
   listingsList = listingsList.map(listing => (
     <ListingsIndexItem
