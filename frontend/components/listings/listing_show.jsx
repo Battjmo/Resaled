@@ -39,6 +39,7 @@ class ListingShow extends React.Component {
 
   render() {
     const { listing } = this.props;
+    console.log(this.state);
     if (!listing) {
       return <div>Loading...</div>;
     } else {

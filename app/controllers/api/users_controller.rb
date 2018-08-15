@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @listings = Listings.all
+
     @user = User.find(params[:id])
   end
 

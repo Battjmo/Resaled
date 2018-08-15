@@ -15,6 +15,14 @@ class UserShow extends React.Component {
     this.props.fetchUser(this.props.match.params.id);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const currentPath = this.props.location.pathname.split("");
+    const currentPageUserId = currentPath[currentPath.length - 1];
+    if ( currentPageUserId != nextProps.match.params.id) {
+      this.props.fetchUser(nextProps.match.params.id);
+    }
+  }
+
 
   render() {
     console.log("user show props:", this.props);
