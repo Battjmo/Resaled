@@ -39,7 +39,7 @@ class UserEditForm extends React.Component{
     // formData.append('user[description]', this.state.description);
     handleSubmit(e) {
       e.preventDefault();
-      this.state.location = this.state.location || "United States"
+      this.state.country = this.state.country || "United States"
       const user = Object.assign({}, this.state);
       this.props.updateUser(user).then(({user}) => this.props.history.push(`/users/${user.id}`));
     }
@@ -69,8 +69,8 @@ render() {
       <br/>
       <br/>
 
-      <label>Location
-        <select onChange={this.update('location')}className="detail category_field">
+      <label>Country
+        <select onChange={this.update('country')}className="detail category_field">
           <option value="United States">United States</option>
           <option value="Canada">Canada</option>
           <option value="United Kingdom">United Kingdom</option>

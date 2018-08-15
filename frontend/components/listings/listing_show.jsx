@@ -13,7 +13,12 @@ class ListingShow extends React.Component {
     this.props.fetchListing(this.props.match.params.id)
     .then(Listing => this.props.fetchUser(Object.values(Listing)[1].userId))
     .then(user => this.setState({listingUsername: Object.values(user)[1].username,
-    listingUserId: Object.values(user)[1].id}));
+      listingUserId: Object.values(user)[1].id,
+      listingUserHeight: Object.values(user)[1].height,
+      listingUserWeight: Object.values(user)[1].weight,
+      listingUserCountry: Object.values(user)[1].country
+    }));
+
   }
 
   canEdit() {
@@ -38,6 +43,7 @@ class ListingShow extends React.Component {
 
 
   render() {
+    console.log("dat state", this.state)
     const { listing } = this.props;
     if (!listing) {
       return <div>Loading...</div>;
@@ -70,6 +76,9 @@ class ListingShow extends React.Component {
             <br/>
             <p className="description-title">SELLER</p>
             <Link className="user-show-link" to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link>
+              <p>{this.state.listingUserCountry}</p>
+              <p>{this.state.listingUserHeight}</p>
+              <p>{this.state.listingUserWeight}</p>
 
           </div>
         </div>
