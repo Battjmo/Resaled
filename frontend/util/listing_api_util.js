@@ -26,7 +26,7 @@ export const createListing = (formData) => (
 
 export const updateListing = (formData) => (
   $.ajax({
-    url: `/api/listings/${formData.id}`,
+    url: `/api/listings/${formData.get('listing[id]')}`,
     method: "PATCH",
     data: formData,
     contentType: false,

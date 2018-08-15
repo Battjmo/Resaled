@@ -54,20 +54,16 @@ class ListingForm extends React.Component {
     formData.append('listing[brand]', this.state.brand);
     formData.append('listing[description]', this.state.description);
 
-    if ((this.props.formType === "Create Listing") && !this.state.photoFile) {
-        this.props.errors.concat("You must upload a photo");
-    }
     if (this.state.photoFile) {
-
       formData.append('listing[photo]', this.state.photoFile);
     }
 
     if (this.props.formType === "Create Listing") {
       this.props.action(formData).then(({Listing}) => this.props.history.push(`/listings/${Listing.id}`));
     } else {
-      console.log("STATE.ID:", this.state.id);
+      console.log("formData: ", formData);
       formData.append('listing[id]', this.state.id);
-      this.props.action(formData).then((result) => console.log("Update Result: ", result));
+      this.props.action(formData).then(({Listing}) => this.props.history.push(`/listings/${Listing.id}`));
   }
 }
   handleFile(e) {
@@ -94,7 +90,7 @@ class ListingForm extends React.Component {
 
           <div className="listing-details">
           <h3 className="listing-details-title">ALL FIELDS REQUIRED</h3>
-          {this.renderErrors()}
+
           <h3 className="listing-details-title">DETAILS </h3>
           <div className="detail-columns">
             <div className="left-col">
@@ -169,6 +165,7 @@ class ListingForm extends React.Component {
           <div className="preview-image-container">
           {preview}
           </div>
+          {this.renderErrors()}
           <input className="listing-submit" type="submit" value={this.props.formType} />
         </form>
       </div>
