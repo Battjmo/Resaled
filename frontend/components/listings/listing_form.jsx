@@ -23,7 +23,6 @@ class ListingForm extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("unMountProps: ", this.props);
     this.props.clearErrors();
   }
 

@@ -3,7 +3,6 @@ export const getAllListings = ({Listings}) => (
 );
 
 export const getUserListings = (state, filter) => {
-  console.log("state in selector: ", state);
   let Listings = state.entities.Listings;
   let result = [];
     for (let id in Listings) {

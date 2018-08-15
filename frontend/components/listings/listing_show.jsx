@@ -39,7 +39,6 @@ class ListingShow extends React.Component {
 
   render() {
     const { listing } = this.props;
-    console.log(this.state);
     if (!listing) {
       return <div>Loading...</div>;
     } else {
@@ -71,7 +70,7 @@ class ListingShow extends React.Component {
             <br/>
             <p className="description-title">SELLER</p>
             <br />
-            <Link to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link> 
+            <Link to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link>
 
           </div>
         </div>

@@ -24,7 +24,6 @@ const mapDispatchToProps = dispatch => {
 class EditListingForm extends React.Component {
   componentDidMount() {
     this.props.fetchListing(this.props.match.params.id);
-    console.log("edit entry props: ", this.props);
   }
 
   componentWillReceiveProps(nextProps) {
