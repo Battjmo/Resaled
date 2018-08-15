@@ -71,7 +71,7 @@ class ListingShow extends React.Component {
             <br/>
             <p className="description-title">SELLER</p>
             <br />
-            {this.state.listingUsername}
+            <Link to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link> 
 
           </div>
         </div>
