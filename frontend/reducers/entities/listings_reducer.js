@@ -4,7 +4,6 @@ import {
   RECEIVE_LISTING,
   RECEIVE_LISTINGS,
   REMOVE_LISTING,
-  RECEIVE_LISTING_ERRORS
 } from '../../actions/listing_actions';
 
 const listingsReducer = (state = {}, action) => {
@@ -18,7 +17,7 @@ const listingsReducer = (state = {}, action) => {
     case REMOVE_LISTING:
       let newState = merge({}, state);
       delete newState[action.listingId];
-      return newState;
+      return newState; 
     default:
       return state;
   }

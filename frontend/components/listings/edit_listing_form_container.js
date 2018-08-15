@@ -8,6 +8,7 @@ const mapStateToProps = ({ session, errors, entities: { users, Listings } }, own
   const Listing = Listings[ownProps.match.params.id];
   const currentUser = users[session.id];
   const formType = 'Update Listing';
+  errors = errors.listing;
 
   return { Listing, currentUser, formType, errors };
 };

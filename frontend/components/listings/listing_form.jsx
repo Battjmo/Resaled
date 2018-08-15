@@ -56,7 +56,9 @@ class ListingForm extends React.Component {
     formData.append('listing[description]', this.state.description);
 
     if ((this.props.formType === "Create Listing") && !this.state.photoFile) {
-      return;
+        return (
+          <p clasname="auth-error">Photo can't be blank</p>
+        )
     }
     if (this.state.photoFile) {
 
@@ -64,14 +66,14 @@ class ListingForm extends React.Component {
     }
 
     if (this.props.formType === "Create Listing") {
-
-      $.ajax({
-        url: '/api/listings',
-        method: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false
-      }).then(listing => this.props.history.push(`/listings/${listing.id}`));
+      // $.ajax({
+      //   url: '/api/listings',
+      //   method: 'POST',
+      //   data: formData,
+      //   contentType: false,
+      //   processData: false
+      // })
+      this.props.action(formData);
     } else {
 
       formData.append('listing[id]', this.state.id);
@@ -81,7 +83,7 @@ class ListingForm extends React.Component {
         data: formData,
         contentType: false,
         processData: false
-      }).then(listing => this.props.history.push(`/listings/${listing.id}`));
+      }).then(poop => console.log(poop));
     }
 }
   handleFile(e) {
