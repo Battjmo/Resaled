@@ -16,7 +16,7 @@ const mapStateToProps = ({ session, errors, entities: { users, Listings } }, own
 const mapDispatchToProps = dispatch => {
   return {
     fetchListing: id => dispatch(fetchListing(id)),
-    action: listing => dispatch(updateListing(listing)),
+    action: formData => dispatch(updateListing(formData)),
   };
 };
 

@@ -42,16 +42,16 @@ export const fetchListings = () => dispatch => (
 );
 
 export const createListing = listing => dispatch => (
-  listingUtil.createListing(listing).then(listing => (
-    dispatch(receiveListing(listing))
+  listingUtil.createListing(listing).then(Listing => (
+    dispatch(receiveListing(Listing))
   ), err => (
     dispatch(receiveListingErrors(err.responseJSON))
   ))
 );
 
 export const updateListing = listing => dispatch => (
-  listingUtil.updateListing(listing).then(listing => (
-    dispatch(receiveListing(listing))
+  listingUtil.updateListing(listing).then(Listing => (
+    dispatch(receiveListing(Listing))
   ), err => (
     dispatch(receiveListingErrors(err.responseJSON))
   ))

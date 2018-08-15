@@ -63,19 +63,12 @@ class ListingForm extends React.Component {
     }
 
     if (this.props.formType === "Create Listing") {
-      this.props.action(formData).then(result => console.log(result));
-      // .then(newListing => this.props.history.push(`listings/${newlisting.id}`));
+      this.props.action(formData).then(({Listing}) => this.props.history.push(`/listings/${Listing.id}`));
     } else {
-
+      console.log("STATE.ID:", this.state.id);
       formData.append('listing[id]', this.state.id);
-      $.ajax({
-        url: `/api/listings/${this.state.id}`,
-        method: "PATCH",
-        data: formData,
-        contentType: false,
-        processData: false
-      }).then(newListing => console.log(newListing));
-    }
+      this.props.action(formData).then((result) => console.log("Update Result: ", result));
+  }
 }
   handleFile(e) {
    const file = e.currentTarget.files[0];
@@ -90,7 +83,6 @@ class ListingForm extends React.Component {
   }
 
   render () {
-    console.log(this.props.errors);
     const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
     return (
       <div>

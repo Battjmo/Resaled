@@ -23,6 +23,21 @@ class UserShow extends React.Component {
     }
   }
 
+  canEdit() {
+      if (!this.props.currentUser) {
+        return false;
+      } else if (this.props.currentUser.id === this.props.user.id)
+      { return (
+        <div>
+          <Link className='button white' to={`/users/${this.props.listing.id}/edit`}>Edit Listing</Link>
+          <br/>
+          <br/>
+          <Link className='button white' to={`/`} onClick={this.delete}>Delete Listing</Link>
+        </div>
+      );
+    }
+  }
+
 
   render() {
     console.log("user show props:", this.props);
@@ -41,6 +56,7 @@ class UserShow extends React.Component {
         return (
         <div className="user-show-container">
           <p> {user.username}</p>
+
             <ul className="index">
               { listingsList }
             </ul>

@@ -24,14 +24,6 @@ export const createListing = (formData) => (
   })
 );
 
-export const deleteListing = (listingId) => (
-  $.ajax({
-    method: "delete",
-    dataType: "json",
-    url: `/api/listings/${listingId}`
-  })
-);
-
 export const updateListing = (formData) => (
   $.ajax({
     url: `/api/listings/${formData.id}`,
@@ -39,5 +31,13 @@ export const updateListing = (formData) => (
     data: formData,
     contentType: false,
     processData: false
+  })
+);
+
+export const deleteListing = (listingId) => (
+  $.ajax({
+    method: "delete",
+    dataType: "json",
+    url: `/api/listings/${listingId}`
   })
 );
