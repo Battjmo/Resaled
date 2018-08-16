@@ -47,6 +47,29 @@
   width: 34px;
 }
 
+.description {
+  margin-bottom: 20px;
+}
+
 .seller-box {
   border-top: 1px solid #e1e1e1;
+  margin-bottom: 60px;
+  padding-top: 30px;
+}
+
+
+.user-show-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 16px;
+  line-height: 25px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.user-item-count {
+  font-size: 14px;
+  line-height: 8px;
+  margin-bottom: 10px;
 }

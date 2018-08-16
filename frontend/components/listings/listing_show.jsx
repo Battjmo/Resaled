@@ -7,7 +7,8 @@ class ListingShow extends React.Component {
     super(props);
     this.canEdit = this.canEdit.bind(this);
     this.delete = this.delete.bind(this);
-    this.getSellerListingCount = this.getSellerListingCount.bind(this)
+    this.getSellerListingCount = this.getSellerListingCount.bind(this);
+    this.parseHeight = this.parseHeight.bind(this);
     this.state = {};
   }
 
@@ -37,6 +38,14 @@ class ListingShow extends React.Component {
     );
   }
 }
+
+  parseHeight() {
+    const sellerFeet = ((this.state.listingUserHeight) / 12);
+    const sellerInches = ((this.state.listingUserHeight) % 12);
+    return (
+      `${sellerFeet} ft ${sellerInches} in, ${this.state.listingUserWeight} lbs`
+    );
+  }
 
   getSellerListingCount() {
     const sellerListings = Object.values(this.props.sellerListings).filter(listing => listing.userId === this.state.listingUserId);
@@ -79,15 +88,10 @@ class ListingShow extends React.Component {
           <p className='description'>{listing.description}</p>
           <br/>
           <div className="seller-box">
-            <br/>
-            <br/>
             <p className="description-title">SELLER</p>
             <Link className="user-show-link" to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link>
-              {this.getSellerListingCount()}
-              <p>{this.state.listingUserCountry}</p>
-              <p>{this.state.listingUserHeight}</p>
-              <p>{this.state.listingUserWeight}</p>
-
+              <p className="user-item-count">{this.getSellerListingCount()} Items for Sale</p>
+              <p>{this.parseHeight()}</p>
           </div>
         </div>
       </div>

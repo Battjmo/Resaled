@@ -9,6 +9,9 @@ class UserShow extends React.Component {
   constructor(props) {
     super(props);
     this.canEdit = this.canEdit.bind(this);
+    this.parseHeight = this.parseSize.bind(this);
+    this.cantEditAdjustor = this.cantEditAdjustor.bind(this);
+    this.headerNameAdjustor = this.headerNameAdjustor.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +27,7 @@ class UserShow extends React.Component {
     }
   }
 
+
   canEdit() {
       if (!this.props.currentUser) {
         return false;
@@ -36,6 +40,39 @@ class UserShow extends React.Component {
       );
     }
   }
+
+  canEditIndicator() {
+    if (!this.props.currentUser) {
+      return false;
+    } else if (this.props.currentUser.id === this.props.user.id) {
+      return true;
+    }
+  }
+
+  cantEditAdjustor() {
+    if (this.canEditIndicator()) {
+      return (<div className="user-edit-container"> {this.canEdit()} </div>)
+        }
+      }
+
+  parseSize() {
+    const userFeet = (this.props.user.height / 12);
+    const userInches = (this.props.user.height % 12);
+    return (
+      `${userFeet} ft ${userInches} in, ${this.props.user.weight} lbs`
+    );
+  }
+
+  headerNameAdjustor() {
+    if (this.canEdit()) {
+      return 'offset-username';
+    }
+    else {
+      return 'centered-username';
+    }
+  }
+
+
 
 
   render() {
@@ -54,12 +91,10 @@ class UserShow extends React.Component {
         return (
         <div className="user-show-container">
           <div className="user-info">
-          <div className="username-container">
+          <div className={this.headerNameAdjustor()}>
           <p> {user.username}</p>
           </div>
-          <div className="user-edit-container">
-            {this.canEdit()}
-          </div>
+          {this.cantEditAdjustor()}
           </div>
           <div className="user-details">
 
@@ -69,8 +104,7 @@ class UserShow extends React.Component {
           <div className="user-country">{user.country}</div>
 
           <div className="user-size">
-          {user.height}
-          {user.weight}
+            {this.parseSize()}
           </div>
           </div>
           </div>
