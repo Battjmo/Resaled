@@ -4,7 +4,7 @@ import ListingsIndexItem from './listings_index_item';
 class ListingsIndex extends React.Component {
 
 componentDidMount() {
-  this.props.fetchListings();
+  this.props.fetchListings().then;
 }
 
 // componentWillReceiveProps(newProps) {
@@ -13,6 +13,10 @@ componentDidMount() {
 //   }
 //
 // }
+
+filterListing() {
+
+}
 
 render() {
   let listingsList = this.props.Listings;
@@ -25,7 +29,6 @@ render() {
   ));
 
   return (
-
   <div className="index-wrapper">
   <h1 className="feed-title">Browse The Feed</h1>
   <ul className="index">

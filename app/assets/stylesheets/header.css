@@ -60,7 +60,9 @@
   text-align: center;
   flex: 1 0 auto;
   letter-spacing: 4px;
-  margin: 20px 25px 20px 220px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 175px;
   line-height: 40px;
   text-decoration: none;
   cursor: pointer;
@@ -178,4 +180,18 @@
   font-weight: 600;
   text-decoration: none;
   margin-right: 10px;
+}
+
+.search-input {
+  font-size: 14px;
+  line-height: 25px;
+  padding-left: 25px;
+  flex: 1 1 auto;
+  width: 200px;
+  background-color: transparent;
+  color: #000000;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  min-width: 150px;
 }

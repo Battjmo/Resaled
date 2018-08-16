@@ -23,18 +23,19 @@
 }
 
 .listing-info-box {
-  width: 35%;
+  width: 340px;
   flex: 4;
   word-wrap: break-word;
 }
 
 .listing-image-box {
-  width: 60%;
+  width: 700px;
   height: auto;
   margin-right: 0;
   box-sizing: border-box;
   position: relative;
   margin-left: 100px;
+  margin-right: 100px;
 }
 
 .description-title {
