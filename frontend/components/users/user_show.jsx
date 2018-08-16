@@ -56,10 +56,21 @@ class UserShow extends React.Component {
       }
 
   parseSize() {
+    if (this.props.user.height === null && this.props.user.weight === null){
+      return (
+        `No Measurements`
+      );
+    }
+    let weight = this.props.user.weight;
+    if (!this.props.user.weight) {
+      weight = 'No Weight Given';
+    } else {
+      weight = `${this.props.user.weight} lbs`;
+    }
     const userFeet = Math.floor((this.props.user.height / 12));
     const userInches = (this.props.user.height % 12);
     return (
-      `${userFeet} ft ${userInches} in, ${this.props.user.weight} lbs`
+      `${userFeet} ft ${userInches} in, ${weight}`
     );
   }
 
@@ -91,15 +102,21 @@ class UserShow extends React.Component {
         return (
         <div className="user-show-container">
           <div className="user-info">
+          <div className="user-name-container">
+          <div className="avatar"></div>
           <div className={this.headerNameAdjustor()}>
           <p> {user.username}</p>
+            <div className="star-rating">
+            <p>&#9733; &#9733; &#9733;</p>
+          </div>
+          </div>
           </div>
           {this.cantEditAdjustor()}
           </div>
           <div className="user-details">
 
-          <div className="user-listing-count">Listings ({listingsList.length})
-          </div>
+          <Link to="#" className="user-listing-count">Listings ({listingsList.length})
+          </Link>
           <div className="user-subdetails">
           <div className="user-country">{user.country}</div>
 

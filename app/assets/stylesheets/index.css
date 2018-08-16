@@ -51,6 +51,7 @@
   font-size: 16px;
   margin-top: 25px;
   margin-bottom: 25px;
+  margin-right: 60px;
 }
 
 .listing-item-top-row {
@@ -65,7 +66,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -92,4 +93,19 @@
   align-items: center;
   margin-top: 8px;
   margin-left: 8px;
+  font-size: 12px;
+}
+
+.search-input {
+  font-size: 14px;
+  line-height: 25px;
+  padding-left: 25px;
+  flex: 1 1 auto;
+  width: 200px;
+  background-color: transparent;
+  color: #000000;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  min-width: 150px;
 }

@@ -14,10 +14,6 @@ componentDidMount() {
 //
 // }
 
-filterListing() {
-
-}
-
 render() {
   let listingsList = this.props.Listings;
   listingsList = listingsList.map(listing => (
@@ -31,6 +27,7 @@ render() {
   return (
   <div className="index-wrapper">
   <h1 className="feed-title">Browse The Feed</h1>
+  <input className="search-input" placeholder="Search" />
   <ul className="index">
     { listingsList }
   </ul>
