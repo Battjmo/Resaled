@@ -19,8 +19,7 @@
 
 .listing-image {
   width: 700px;
-  max-width: 100%;
-  height: 700px;
+  max-height: 100%;
 }
 
 .listing-info-box {
