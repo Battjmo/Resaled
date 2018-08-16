@@ -61,7 +61,6 @@ class UserEditForm extends React.Component{
 
 
 render() {
-  console.log("dem props: ", this.props);
   return(
     <div>
       <div className="user-edit-header">

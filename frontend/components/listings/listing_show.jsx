@@ -59,7 +59,6 @@ class ListingShow extends React.Component {
 
 
   render() {
-    console.log("dem propz: ", this.props);
     const { listing } = this.props;
     if (!listing) {
       return <div>Loading...</div>;
