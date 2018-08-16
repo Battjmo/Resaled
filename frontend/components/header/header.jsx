@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-  class Header extends React.component {}
 const Header = ({currentUser, signout, openModal}) => {
 
   //If there's no user...
