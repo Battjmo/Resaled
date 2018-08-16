@@ -53,12 +53,28 @@ class UserShow extends React.Component {
     } else {
         return (
         <div className="user-show-container">
+          <div className="user-info">
+          <div className="username-container">
           <p> {user.username}</p>
-          <p>{listingsList.length}</p>
-          <p>{user.country}</p>
-          <p>{user.height}</p>
-          <p>{user.weight}</p>
-          {this.canEdit()}
+          </div>
+          <div className="user-edit-container">
+            {this.canEdit()}
+          </div>
+          </div>
+          <div className="user-details">
+
+          <div className="user-listing-count">Listings ({listingsList.length})
+          </div>
+          <div className="user-subdetails">
+          <div className="user-country">{user.country}</div>
+
+          <div className="user-size">
+          {user.height}
+          {user.weight}
+          </div>
+          </div>
+          </div>
+
 
             <ul className="index">
               { listingsList }
