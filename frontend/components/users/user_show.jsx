@@ -56,7 +56,7 @@ class UserShow extends React.Component {
       }
 
   parseSize() {
-    const userFeet = (this.props.user.height / 12);
+    const userFeet = Math.floor((this.props.user.height / 12));
     const userInches = (this.props.user.height % 12);
     return (
       `${userFeet} ft ${userInches} in, ${this.props.user.weight} lbs`

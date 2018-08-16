@@ -40,7 +40,7 @@ class ListingShow extends React.Component {
 }
 
   parseHeight() {
-    const sellerFeet = ((this.state.listingUserHeight) / 12);
+    const sellerFeet = Math.floor((this.state.listingUserHeight) / 12);
     const sellerInches = ((this.state.listingUserHeight) % 12);
     return (
       `${sellerFeet} ft ${sellerInches} in, ${this.state.listingUserWeight} lbs`
