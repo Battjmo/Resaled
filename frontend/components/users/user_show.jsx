@@ -54,6 +54,7 @@ class UserShow extends React.Component {
         return (
         <div className="user-show-container">
           <p> {user.username}</p>
+          <p>{listingsList.length}</p>
           <p>{user.country}</p>
           <p>{user.height}</p>
           <p>{user.weight}</p>

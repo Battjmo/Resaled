@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {getUserListings} from '../../reducers/selectors';
 
 class ListingShow extends React.Component {
   constructor(props) {
     super(props);
     this.canEdit = this.canEdit.bind(this);
     this.delete = this.delete.bind(this);
+    this.getSellerListingCount = this.getSellerListingCount.bind(this)
     this.state = {};
   }
 
@@ -18,7 +20,7 @@ class ListingShow extends React.Component {
       listingUserWeight: Object.values(user)[1].weight,
       listingUserCountry: Object.values(user)[1].country
     }));
-
+    this.props.fetchListings();
   }
 
   canEdit() {
@@ -36,6 +38,11 @@ class ListingShow extends React.Component {
   }
 }
 
+  getSellerListingCount() {
+    const sellerListings = Object.values(this.props.sellerListings).filter(listing => listing.userId === this.state.listingUserId);
+    return sellerListings.length;
+  }
+
   delete() {
     this.props.deleteListing(this.props.listing.id);
     this.props.history.push('/');
@@ -43,7 +50,7 @@ class ListingShow extends React.Component {
 
 
   render() {
-    console.log("dat state", this.state)
+    console.log("dem propz: ", this.props);
     const { listing } = this.props;
     if (!listing) {
       return <div>Loading...</div>;
@@ -76,6 +83,7 @@ class ListingShow extends React.Component {
             <br/>
             <p className="description-title">SELLER</p>
             <Link className="user-show-link" to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link>
+              {this.getSellerListingCount()}
               <p>{this.state.listingUserCountry}</p>
               <p>{this.state.listingUserHeight}</p>
               <p>{this.state.listingUserWeight}</p>
