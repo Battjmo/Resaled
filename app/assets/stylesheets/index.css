@@ -97,15 +97,12 @@
 }
 
 .search-input {
-  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #e1e1e1;
+  width: 692px;
+  text-align: center;
+  padding: 2px 20px 4px 18px;
   line-height: 25px;
-  padding-left: 25px;
-  flex: 1 1 auto;
-  width: 200px;
-  background-color: transparent;
-  color: #000000;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  min-width: 150px;
+  font-size: 14px;
 }

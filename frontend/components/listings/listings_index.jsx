@@ -6,9 +6,7 @@ class ListingsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.updateSearch = this.updateSearch.bind(this);
-    this.filterListings = this.filterListings.bind(this);
-    this.categoryFilter = this.categoryFilter.bind(this);
-    this.state = {};
+    this.state = {searchFilter: "", categoryFilter: ""};
   }
 
   componentDidMount() {
@@ -24,39 +22,63 @@ componentWillReceiveProps(newProps) {
 
 updateSearch() {
   return (e) => {
-  this.setState({filter: e.target.value.toUpperCase()});
+  this.setState({searchFilter: e.target.value.toUpperCase()});
   };
 }
 
-filterListings() {
-  if (this.state.filter) {
-  let workingArray = this.props.Listings;
-  let result = [];
-  for (let i = 0; i < workingArray.length; i++) {
-    if (workingArray[i].title.toUpperCase().includes(this.state.filter) ||
-      workingArray[i].brand.toUpperCase().includes(this.state.filter) ||
-      workingArray[i].category.toUpperCase().includes(this.state.filter)){
-      result.push(workingArray[i]);
+categoryFilter(category = "") {
+  this.setState({categoryFilter: category.toUpperCase()});
     }
+
+  filterByCategory(listings) {
+    if (!this.state.categoryFilter) {
+      return listings;
+    }
+    let result = [];
+    for (let i = 0; i < listings.length; i++) {
+      if (listings[i].category.toUpperCase().includes(this.state.categoryFilter)) {
+      result.push(listings[i]);
+      }
+    }
+    return result;
+  }
+
+  filterBySearch(listings) {
+    if (!this.state.searchFilter) {
+      return listings }
+    let result = [];
+    for (let i = 0; i < listings.length; i++) {
+      if (listings[i].title.toUpperCase().includes(this.state.searchFilter) ||
+        listings[i].brand.toUpperCase().includes(this.state.searchFilter) ||
+        listings[i].category.toUpperCase().includes(this.state.searchFilter)){
+        result.push(listings[i]);
+      }
   }
   return result;
-  }
-  return this.props.Listings;
 }
 
-categoryFilter(category = "", e) {
-  e.preventDefault();
-  this.setState({filter: category.toUpperCase()});
-  console.log("category filter state: ", this.state.filter);
-    }
+// filterListings(listings) {
+//   if (this.state.filter) {
+//   let workingArray = this.props.Listings;
+//   let result = [];
+//   for (let i = 0; i < workingArray.length; i++) {
+//     if (workingArray[i].title.toUpperCase().includes(this.state.filter) ||
+//       workingArray[i].brand.toUpperCase().includes(this.state.filter) ||
+//       workingArray[i].category.toUpperCase().includes(this.state.filter)){
+//       result.push(workingArray[i]);
+//     }
+//   }
+//   return result;
+// }
+
+
+
+
 
 render() {
-  console.log(this.state.filter);
-  console.log("dem propz: ", this.props);
   let listingsList = this.props.Listings;
-  if (this.filterListings() !== this.props.Listings) {
-    listingsList = this.filterListings();
-  }
+  listingsList = this.filterByCategory(listingsList);
+  listingsList = this.filterBySearch(listingsList);
   listingsList = listingsList.map(listing => (
     <ListingsIndexItem
       key ={listing.id}
@@ -68,10 +90,16 @@ render() {
   return (
   <div className="index-wrapper">
   <h1 className="feed-title">Browse The Feed</h1>
-  <input className="search-bar" onChange={this.updateSearch()} placeholder="Search Supreme, "></input>
-  <button onClick={(e) => this.categoryFilter("Jacket", e)}>Jacket</button>
-  <button onClick={(e) => this.categoryFilter("Pants", e)}>Pants</button>
-  <input className="search-input" placeholder="Search" />
+  <input className="search-input" onChange={this.updateSearch()} placeholder="Search Supreme, Dior, shirt, etc."></input>
+  <div className="category-container">
+  <button onClick={() => this.categoryFilter("Shirt")}>Shirt</button>
+  <button onClick={() => this.categoryFilter("Jacket")}>Jacket</button>
+  <button onClick={() => this.categoryFilter("Pants")}>Pants</button>
+  <button onClick={() => this.categoryFilter("Shoes")}>Shoes</button>
+  <button onClick={() => this.categoryFilter("Jewelery")}>Jewelery</button>
+  <button onClick={() => this.categoryFilter("Luggage")}>Luggage</button>
+  <button onClick={() => this.categoryFilter("Other")}>Other</button>
+  </div>
   <ul className="index">
     { listingsList }
   </ul>
