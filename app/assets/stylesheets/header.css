@@ -148,6 +148,8 @@
 .logoutButton {
   margin-left: 20px;
   cursor: pointer;
+  text-decoration: none;
+  color: #000000;
 }
 
 .auth-or {
