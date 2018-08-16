@@ -76,7 +76,7 @@ class UserShow extends React.Component {
           </div>
 
 
-            <ul className="index">
+            <ul className="index user-index">
               { listingsList }
             </ul>
       </div>

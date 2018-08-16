@@ -80,3 +80,10 @@
   padding: 0 18px;
   color: #737373;
 }
+
+.user-index {
+  justify-content: unset;
+  flex-direction: row;
+  width: 100%;
+  margin: 20px auto 0;
+}

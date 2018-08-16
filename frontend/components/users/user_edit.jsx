@@ -64,37 +64,34 @@ render() {
   console.log("dem props: ", this.props);
   return(
     <div>
-  <p>Here's the user edit page!</p>
-  {this.props.user.username}
-
-  <form className="user-form" onSubmit={this.handleSubmit}>
-  <h3 className="listing-details-title">DETAILS </h3>
-  <div className="detail-columns">
-
-    <div className="left-col">
-      <label>Username
-      <input
-        className="detail brand-field"
-        type="text"
-        placeholder="Username"
-        value={this.state.username}
-        onChange={this.update('username')} />
-      </label>
-
-      <br/>
-      <br/>
-
-      <label>Country
-        <select onChange={this.update('country')}className="detail category_field">
-          <option value="United States">United States</option>
-          <option value="Canada">Canada</option>
-          <option value="United Kingdom">United Kingdom</option>
-          <option value="Europe">Europe</option>
-          <option value="Asia">Asia</option>
-          <option value="Oceania">Oceania</option>
-          <option value="Other">Other</option>
-        </select>
-      </label>
+      <div className="user-edit-header">
+        {this.props.user.username}
+      </div>
+      <form className="listing-form" onSubmit={this.handleSubmit}>
+        <div className="user-edit-title">Edit Your Info</div>
+        <div className="detail-columns">
+          <div className="left-col">
+            <label>Username
+            <input
+              className="detail brand-field"
+              type="text"
+              placeholder="Username"
+              value={this.state.username}
+              onChange={this.update('username')} />
+            </label>
+            <br/>
+            <br/>
+              <label>Country
+                <select onChange={this.update('country')}className="detail category_field">
+                  <option value="United States">United States</option>
+                  <option value="Canada">Canada</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Oceania">Oceania</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
 
     </div>
 
@@ -109,22 +106,22 @@ render() {
       </label>
 
       <div className="size">
-        <label>Height
+        <label className="size-label">Height
           <input
-            className="detail brand-field"
+            className="size-input"
             type="tel"
             placeholder="Inches"
             value={this.state.height || ""}
             onChange={this.update('height')} />
         </label>
-        <label>Weight
-        <input
-          className="detail brand-field"
-          type="number"
-          placeholder="pounds"
-          value={this.state.weight || ""}
-          onChange={this.update('weight')} />
-        </label>
+        <label className="size-label">Weight
+          <input
+            className="size-input"
+            type="number"
+            placeholder="pounds"
+            value={this.state.weight || ""}
+            onChange={this.update('weight')} />
+          </label>
       </div>
     </div>
   </div>

@@ -1,0 +1,52 @@
+.user-edit-header {
+  border-bottom: solid 1px #e1e1e1;
+  flex: 1 0 100%;
+  padding-bottom: 20px;
+  text-align: center;
+  align-items: center;
+  font-weight: 400px;
+  font-size: 30px;
+  line-height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 60px;
+}
+
+.user-edit-title {
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 67px;
+}
+
+.size {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: row;
+  width: auto;
+}
+
+.size-input {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 2px;
+  height: auto;
+  width: 100%;
+  padding: 10px 18px;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #666;
+  height: 38px;
+  display: inline;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  font-family: 'roboto' sans-serif;
+  font-size: 100%;
+}
+
+.size-label {
+  margin-top: 19px;
+  width: 40%
+}
