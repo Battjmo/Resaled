@@ -37,7 +37,7 @@ class ListingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    this.state.category = this.state.category || "shirt";
+    this.state.category = this.state.category || "Shirt";
     formData.append('listing[user_id]', this.state.userId);
     formData.append('listing[title]', this.state.title);
     formData.append('listing[price]', this.state.price);
@@ -89,7 +89,7 @@ class ListingForm extends React.Component {
                 <option value="Shirt">Shirt</option>
                 <option value="Jacket">Jacket</option>
                 <option value="Pants">Pants</option>
-                  <option value="Shoes">Shoes</option>
+                <option value="Shoes">Shoes</option>
                 <option value="Jewelery">Jewelery</option>
                 <option value="Luggage">Luggage</option>
                 <option value="Other">Other</option>
