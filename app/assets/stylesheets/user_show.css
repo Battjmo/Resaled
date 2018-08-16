@@ -31,7 +31,7 @@
 
 .offset-username{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-weight: 400px;
   font-size: 30px;
   line-height: 30px;
@@ -39,6 +39,7 @@
   text-align: left;
   margin-top: 20px;
   margin-right: 200px;
+  align-items: left;
 }
 
 .centered-username {
@@ -48,6 +49,8 @@
   margin-bottom: 20px;
   margin-top: 20px;
   margin-right: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-details {
@@ -66,7 +69,7 @@
   align-items: center;
   line-height: 25px;
   padding: 0 18px;
-  font-size: 16px;
+  font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
@@ -103,18 +106,24 @@
 
 .avatar {
   background-image: url("male-circle-128.png");
-  height: 35px;
-  width: 35px;
+  height: 80px;
+  width: 80px;
   background-size: cover;
   margin-right: 20px;
 }
 
 .star-rating {
-  display: block;
-  margin-left: 20px;
+  display: flex;
+  margin-top: 10px;
 }
 
 .user-name-container {
   display: flex;
   align-items: center;
+  flex-direction: row;
+  height: 100px;
+}
+
+.username {
+
 }

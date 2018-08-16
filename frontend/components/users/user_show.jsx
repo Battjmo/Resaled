@@ -105,23 +105,26 @@ class UserShow extends React.Component {
           <div className="user-name-container">
           <div className="avatar"></div>
           <div className={this.headerNameAdjustor()}>
-          <p> {user.username}</p>
-            <div className="star-rating">
-            <p>&#9733; &#9733; &#9733;</p>
+            <div className='username'>
+          {user.username}
+          <div className="star-rating">
+          <p>&#9733; &#9733; &#9733; &#9733; &#9734;</p>
           </div>
           </div>
+
+          </div>
+
           </div>
           {this.cantEditAdjustor()}
           </div>
           <div className="user-details">
-
           <Link to="#" className="user-listing-count">Listings ({listingsList.length})
           </Link>
           <div className="user-subdetails">
           <div className="user-country">{user.country}</div>
 
           <div className="user-size">
-            {this.parseSize()}
+          {this.parseSize()}
           </div>
           </div>
           </div>

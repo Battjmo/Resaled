@@ -34,7 +34,8 @@ filterListings() {
   let result = [];
   for (let i = 0; i < workingArray.length; i++) {
     if (workingArray[i].title.toUpperCase().includes(this.state.filter) ||
-      workingArray[i].brand.toUpperCase().includes(this.state.filter)) {
+      workingArray[i].brand.toUpperCase().includes(this.state.filter) ||
+      workingArray[i].category.toUpperCase().includes(this.state.filter)){
       result.push(workingArray[i]);
     }
   }
@@ -43,21 +44,15 @@ filterListings() {
   return this.props.Listings;
 }
 
-categoryFilter(category, e) {
-  console.log("filter category: ", category);
+categoryFilter(category = "", e) {
   e.preventDefault();
-  let result = [];
-  let workingArray = this.props.Listings;
-  for (let i = 0; i < workingArray.length; i++) {
-    console.log("element category: ", workingArray[i].category);
-    if (workingArray[i].category === category) {
-      result.push(workingArray[i]);
-      }
-    }
-  console.log("Category Result: ", result);
+  this.setState({filter: category.toUpperCase()});
+  console.log("category filter state: ", this.state.filter);
     }
 
 render() {
+  console.log(this.state.filter);
+  console.log("dem propz: ", this.props);
   let listingsList = this.props.Listings;
   if (this.filterListings() !== this.props.Listings) {
     listingsList = this.filterListings();
@@ -73,8 +68,9 @@ render() {
   return (
   <div className="index-wrapper">
   <h1 className="feed-title">Browse The Feed</h1>
-  <input className="search-bar" onChange={this.updateSearch()}></input>
+  <input className="search-bar" onChange={this.updateSearch()} placeholder="Search Supreme, "></input>
   <button onClick={(e) => this.categoryFilter("Jacket", e)}>Jacket</button>
+  <button onClick={(e) => this.categoryFilter("Pants", e)}>Pants</button>
   <input className="search-input" placeholder="Search" />
   <ul className="index">
     { listingsList }
