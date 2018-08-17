@@ -65,27 +65,9 @@ class UserEditForm extends React.Component{
       formData.append('user[weight]', this.state.weight);
       formData.append('user[location]', this.state.location);
       formData.append('user[description]', this.state.description);
-      e.preventDefault();
-      // if (this.state.photoFile) {
-      //   formData.append(`user[photo]`, this.state.photoFile);
-      // }
       this.props.updateUser(formData).then(({user}) => this.props.history.push(`/users/${user.id}`));
 
-      // this.state.country = this.state.country || "United States";
-      // const user = Object.assign({}, this.state);
-      // this.props.updateUser(user).then(({user}) => this.props.history.push(`/users/${user.id}`));
-    }
-
-
-    // <div className="avatar-container">
-    // {preview}
-    // </div>
-    // <label className="avatar-header">Avatar</label>
-    // <br/>
-      // <input className="avatar-file" type="file" onChange={this.handleFile} />
-
 render() {
-  console.log(this.props.user);
   const preview = this.state.photoUrl ? <img className="avatar-preview" src={this.state.photoUrl} /> : <img className="avatar-preview" src={window.avatarURL} />;
   return(
     <div>
