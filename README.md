@@ -83,3 +83,40 @@ categoryFilter(category = "") {
 ![modal image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/auth_modal.png)
 
 Modals were used to create an elegant and intuitive signin and signup process. If you investigate the purchase link on the listing detail page you may find another fun example lurking.
+
+They looks a little something like this, in CSS:
+
+```CSS
+.modal-background {
+  text-align: center;
+  background-color: rgba(249,249,249,0.9);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 350;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-child {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  background: #fff;
+  outline: none;
+  border: 1px solid #1a1a1a;
+  max-width: 620px;
+  max-height: 95%;
+  padding: 100px 80px;
+  box-sizing: border-box;
+  box-shadow: 0 0 18px rgba(0,0,0,0.4);
+  overflow-y: scroll;
+}
+```
+
+The box shadow on the child combined with the z-index give everything a nice sense of depth.
+
+Thanks for reading, and enjoy the site!
