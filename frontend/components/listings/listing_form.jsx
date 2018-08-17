@@ -34,6 +34,14 @@ class ListingForm extends React.Component {
     );
   }
 
+  photoWarning() {
+    if (this.props.formType === "Create Listing") {
+      return (
+        <p className="photo-warning">You must add a photo!</p>
+      );
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
@@ -145,7 +153,8 @@ class ListingForm extends React.Component {
           </label>
           <div className="photo-header">
             <h3>UPLOAD IMAGE </h3>
-            <p className="photo-warning">You must add a photo!</p>
+
+            {this.photoWarning()}
           </div>
 
           <input type="file" onChange={this.handleFile} />
