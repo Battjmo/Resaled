@@ -3,8 +3,9 @@
 [Live site](https://resaled.herokuapp.com/#/)
 
 Resaled is clone of [Grailed](https://www.grailed.com/), a popular menswear
-reselling site. Thereon, users can browse and create listings for menswear items
-they wish to buy or sell. They can edit and view each others profiles as well.
+reselling site. Thereon, users can browse, search for, create, edit, and delete
+listings for menswear items they wish to buy or sell. They can edit and view
+each others profiles as well.
 
 ## Ingredients
 
@@ -16,7 +17,9 @@ The app uses the following technologies in its current implementation:
 
 3. Amazon S3 and ActiveStorage for image uploading, storage, and retrieval.
 
-## How it Works
+4. Heroku hosting.
+
+## Highlights
 
 ### Home Page
 
@@ -24,16 +27,59 @@ The app uses the following technologies in its current implementation:
 
 The first thing a user sees on accessing the site is an index page of all the items available on the site. There is also a header at the top of all pages in which the user can create an account or sign in if they already have one. A demo account is available for those who wish to experience the full functionality of the app more quickly.
 
-![modal image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/auth_modal.png)
-
-___
-
-![Listings Image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/listing_show.png)
-
-Clicking any of the listings will take the user to a listing detail page, with all the relevant info for said listings and a larger photo of it. Of course, none of our items are actually for sale, but you may find something interesting if you click the BUY link.
+The index itself is made out of a flex box, which allows it to scale gracefully for multiple screen sizes, including mobile. Scaling this to work on any screen size took a lot of careful CSS work.
 
 ---
 
-![form image]()
 
-Clicking the Sell button in the header, when logged in, will take the user to the create listings form.
+
+### Search
+
+The search bar and large category buttons along the top of the index combine to allow users to filter the listings they see in real time. After exploring backend options for implementing this, the most visually interesting and best performing method wound up being to do it entirely on the front end with dynamic filtering:
+
+```Javascript
+updateSearch() {
+  return (e) => {
+  this.setState({searchFilter: e.target.value.toUpperCase()});
+  };
+}
+
+categoryFilter(category = "") {
+  this.setState({categoryFilter: category.toUpperCase()});
+    }
+
+  filterByCategory(listings) {
+    if (!this.state.categoryFilter) {
+      return listings;
+    }
+    let result = [];
+    for (let i = 0; i < listings.length; i++) {
+      if (listings[i].category.toUpperCase().includes(this.state.categoryFilter)) {
+      result.push(listings[i]);
+      }
+    }
+    return result;
+  }
+
+  filterBySearch(listings) {
+    if (!this.state.searchFilter) {
+      return listings; }
+    let result = [];
+    for (let i = 0; i < listings.length; i++) {
+      if (listings[i].title.toUpperCase().includes(this.state.searchFilter) ||
+        listings[i].brand.toUpperCase().includes(this.state.searchFilter) ||
+        listings[i].category.toUpperCase().includes(this.state.searchFilter)){
+        result.push(listings[i]);
+      }
+  }
+  return result;
+}
+```
+
+---
+
+### Modals
+
+
+
+![modal image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/auth_modal.png)
