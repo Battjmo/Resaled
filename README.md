@@ -16,6 +16,8 @@ The app uses the following technologies in its current implementation:
 
 4. Heroku hosting.
 
+---
+
 ## Highlights
 
 ### Home Page
@@ -26,7 +28,9 @@ The first thing a user sees on accessing the site is an index page of all the it
 
 The index itself is made out of a flex box, which allows it to scale gracefully for multiple screen sizes, including mobile. Scaling this to work on any screen size took a lot of careful CSS work.
 
+
 ---
+
 
 ![Search GIF](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/search.gif)
 
@@ -73,7 +77,9 @@ categoryFilter(category = "") {
 }
 ```
 
+
 ---
+
 
 ### Modals
 
@@ -115,6 +121,10 @@ They looks a little something like this, in CSS:
 ```
 
 The box shadow on the child combined with the z-index give everything a nice sense of depth.
+
+
+---
+
 
 Some features on my to-do list:
 
