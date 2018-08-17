@@ -86,12 +86,11 @@ class ListingForm extends React.Component {
           <div className="detail-columns">
             <div className="left-col">
               <select onChange={this.update('category')}className="detail category_field">
-                <option value="Shirt">Shirt</option>
+                <option value="Shirt">Shirts</option>
                 <option value="Outerwear">Outerwear</option>
                 <option value="Bottoms">Bottoms</option>
                 <option value="Shoes">Shoes</option>
                 <option value="Accessories">Accessories</option>
-                <option value="Luggage">Luggage</option>
                 <option value="Other">Other</option>
               </select>
             <br/>
@@ -144,9 +143,11 @@ class ListingForm extends React.Component {
               value={this.state.price}
               onChange={this.update('price')} />
           </label>
+          <div className="photo-header">
+            <h3>UPLOAD IMAGE </h3>
+            <p className="photo-warning">You must add a photo!</p>
+          </div>
 
-          <h3>UPLOAD IMAGE </h3>
-          <p className="photo-warning">You must add a photo!</p>
           <input type="file" onChange={this.handleFile} />
 
           <br/>

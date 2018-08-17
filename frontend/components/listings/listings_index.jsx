@@ -78,7 +78,6 @@ render() {
     <button className="category-option" onClick={() => this.categoryFilter("Bottoms")}>Bottoms</button>
     <button className="category-option" onClick={() => this.categoryFilter("Shoes")}>Shoes</button>
     <button className="category-option" onClick={() => this.categoryFilter("Accessories")}>Accessories</button>
-    <button className="category-option" onClick={() => this.categoryFilter("Luggage")}>Luggage</button>
     <button className="category-option" onClick={() => this.categoryFilter("Other")}>Other</button>
     </div>
     <h1 className="feed-title">Browse The Feed</h1>
