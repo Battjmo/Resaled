@@ -29,7 +29,8 @@ class Header extends React.Component {
         <div className='headerMenu'>
         <Link className="sell-button" to="/listings/new">Sell</Link>
         <br/>
-        <Link className="logoutButton" to={`/users/${this.props.currentUser.id}`}>Profile</Link>
+        <Link className="logoutButton" to={`/users/${this.props.currentUser.id}`}>
+        <div className="profile-link-image" /> </Link>
         <a href="/" className="logoutButton" onClick={this.props.signout}>Sign Out</a>
         </div>
       </nav>

@@ -48,7 +48,7 @@
   text-align: center;
   line-height: 25px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 25px;
   margin-bottom: 25px;
   margin-right: 60px;
@@ -105,4 +105,39 @@
   padding: 2px 20px 4px 18px;
   line-height: 25px;
   font-size: 14px;
+  margin-right: 50px;
+}
+
+.category-container {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-right: 10px;
+  display: block;
+  z-index: 220;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #e1e1e1;
+  line-height: 20px;
+}
+
+.category-option {
+  padding-top: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 20px;
+  height: 20px;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  vertical-align:
+}
+
+.profile-link-image {
+  background-image: url("male-circle-128.png");
+  height: 50px;
+  width: 50px;
+  background-size: cover;
 }

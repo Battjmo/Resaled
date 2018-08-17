@@ -45,7 +45,7 @@ categoryFilter(category = "") {
 
   filterBySearch(listings) {
     if (!this.state.searchFilter) {
-      return listings }
+      return listings; }
     let result = [];
     for (let i = 0; i < listings.length; i++) {
       if (listings[i].title.toUpperCase().includes(this.state.searchFilter) ||
@@ -56,24 +56,6 @@ categoryFilter(category = "") {
   }
   return result;
 }
-
-// filterListings(listings) {
-//   if (this.state.filter) {
-//   let workingArray = this.props.Listings;
-//   let result = [];
-//   for (let i = 0; i < workingArray.length; i++) {
-//     if (workingArray[i].title.toUpperCase().includes(this.state.filter) ||
-//       workingArray[i].brand.toUpperCase().includes(this.state.filter) ||
-//       workingArray[i].category.toUpperCase().includes(this.state.filter)){
-//       result.push(workingArray[i]);
-//     }
-//   }
-//   return result;
-// }
-
-
-
-
 
 render() {
   let listingsList = this.props.Listings;
@@ -89,17 +71,18 @@ render() {
 
   return (
   <div className="index-wrapper">
-  <h1 className="feed-title">Browse The Feed</h1>
-  <input className="search-input" onChange={this.updateSearch()} placeholder="Search Supreme, Dior, shirt, etc."></input>
-  <div className="category-container">
-  <button onClick={() => this.categoryFilter("Shirt")}>Shirt</button>
-  <button onClick={() => this.categoryFilter("Jacket")}>Jacket</button>
-  <button onClick={() => this.categoryFilter("Pants")}>Pants</button>
-  <button onClick={() => this.categoryFilter("Shoes")}>Shoes</button>
-  <button onClick={() => this.categoryFilter("Jewelery")}>Jewelery</button>
-  <button onClick={() => this.categoryFilter("Luggage")}>Luggage</button>
-  <button onClick={() => this.categoryFilter("Other")}>Other</button>
-  </div>
+
+    <div className="category-container">
+    <button className="category-option" onClick={() => this.categoryFilter("Shirt")}>Shirt</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Jacket")}>Jacket</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Pants")}>Pants</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Shoes")}>Shoes</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Jewelery")}>Jewelery</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Luggage")}>Luggage</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Other")}>Other</button>
+    </div>
+    <h1 className="feed-title">Browse The Feed</h1>
+  <input className="search-input" onChange={this.updateSearch()} placeholder="Search Supreme, Dior, Zanerobe, shirt, anorak, etc."></input>
   <ul className="index">
     { listingsList }
   </ul>
