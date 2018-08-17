@@ -1,9 +1,5 @@
 .show-container {
   display: flex;
-  /* margin-right: 300px;
-  margin-left: 200px;
-  margin-top: 75px;
-  margin-bottom: 100px; */
   margin: auto;
   margin-top: 75px;
   width: 1000px;
@@ -54,6 +50,8 @@
 
 .description {
   margin-bottom: 20px;
+  white-space: pre-wrap;
+  width: 400px;
 }
 
 .seller-box {
