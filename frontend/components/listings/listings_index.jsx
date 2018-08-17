@@ -73,11 +73,11 @@ render() {
   <div className="index-wrapper">
 
     <div className="category-container">
-    <button className="category-option" onClick={() => this.categoryFilter("Shirt")}>Shirt</button>
-    <button className="category-option" onClick={() => this.categoryFilter("Jacket")}>Jacket</button>
-    <button className="category-option" onClick={() => this.categoryFilter("Pants")}>Pants</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Shirt")}>Shirts</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Outerwear")}>Outerwear</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Bottoms")}>Bottoms</button>
     <button className="category-option" onClick={() => this.categoryFilter("Shoes")}>Shoes</button>
-    <button className="category-option" onClick={() => this.categoryFilter("Jewelery")}>Jewelery</button>
+    <button className="category-option" onClick={() => this.categoryFilter("Accessories")}>Accessories</button>
     <button className="category-option" onClick={() => this.categoryFilter("Luggage")}>Luggage</button>
     <button className="category-option" onClick={() => this.categoryFilter("Other")}>Other</button>
     </div>

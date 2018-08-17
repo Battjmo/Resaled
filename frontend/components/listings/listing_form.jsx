@@ -87,10 +87,10 @@ class ListingForm extends React.Component {
             <div className="left-col">
               <select onChange={this.update('category')}className="detail category_field">
                 <option value="Shirt">Shirt</option>
-                <option value="Jacket">Jacket</option>
-                <option value="Pants">Pants</option>
+                <option value="Outerwear">Outerwear</option>
+                <option value="Bottoms">Bottoms</option>
                 <option value="Shoes">Shoes</option>
-                <option value="Jewelery">Jewelery</option>
+                <option value="Accessories">Accessories</option>
                 <option value="Luggage">Luggage</option>
                 <option value="Other">Other</option>
               </select>
