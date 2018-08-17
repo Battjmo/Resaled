@@ -66,6 +66,7 @@ class UserEditForm extends React.Component{
       formData.append('user[location]', this.state.location);
       formData.append('user[description]', this.state.description);
       this.props.updateUser(formData).then(({user}) => this.props.history.push(`/users/${user.id}`));
+    }
 
 render() {
   const preview = this.state.photoUrl ? <img className="avatar-preview" src={this.state.photoUrl} /> : <img className="avatar-preview" src={window.avatarURL} />;
