@@ -4,7 +4,7 @@
 
 Resaled is clone of [Grailed](https://www.grailed.com/), a popular menswear reselling site. Thereon, users can browse, search for, create, edit, and delete listings for menswear items they wish to buy or sell. They can edit and view each other's profiles as well.
 
-
+g
 ## Ingredients
 
 The app uses the following technologies in its current implementation:
@@ -133,8 +133,10 @@ Some features on my to-do list:
 
 1. The ability to follow a listing, and have those listings appear in a separate feed on a user's profile page.
 
-2. The ability to leave comments on other user's listings, preferably with filtering because comments are the very most dangerous part of the internet.
+2. Adding multiple photos per listing, viewable in a slideshow window, so you can see the backs of the listings, tags, etc. 
 
-3. Complex savable filters for every aspect of listings.
+3. The ability to leave comments on other user's listings, preferably with filtering because comments are the very most dangerous part of the internet.
+
+4. Complex savable filters for every aspect of listings.
 
 Thanks for reading, and enjoy the app!
