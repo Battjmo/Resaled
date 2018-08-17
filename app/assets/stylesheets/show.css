@@ -27,6 +27,7 @@
   width: 400px;
   word-wrap: break-word;
   box-sizing: border-box;
+  margin-left: 60px;
 }
 
 .listing-image-box {
