@@ -22,6 +22,7 @@
   flex-direction: row;
   list-style: none;
   margin-left: 200px;
+  margin-right: 100px;
 }
 
 .listing-link {
