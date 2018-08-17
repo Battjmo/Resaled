@@ -24,7 +24,7 @@ The app uses the following technologies in its current implementation:
 
 ![Index Image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/Index.png)
 
-The first thing a user sees on accessing the site is an index page of all the items available on the site. There is also a header at the top of all pages in which the user can create an account or sign in if they already have one. A demo account is available for those who wish to experience the full functionality of the app more quickly.
+The first thing a user sees on accessing the app is an index page of all the items available on the site. There is also a header at the top of all pages in which the user can create an account or sign in if they already have one. A demo account is available for those who wish to experience the full functionality of the app more quickly.
 
 The index itself is made out of a flex box, which allows it to scale gracefully for multiple screen sizes, including mobile. Scaling this to work on any screen size took a lot of careful CSS work.
 
@@ -134,4 +134,4 @@ Some features on my to-do list:
 
 3. Complex savable filters for every aspect of listings.
 
-Thanks for reading, and enjoy the site!
+Thanks for reading, and enjoy the app!
