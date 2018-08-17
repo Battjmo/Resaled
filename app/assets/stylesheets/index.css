@@ -22,7 +22,7 @@
   flex-direction: row;
   list-style: none;
   margin-left: 200px;
-  margin-right: 100px;
+  margin-right: 120px;
 }
 
 .listing-link {
@@ -124,7 +124,7 @@
 }
 
 .category-option {
-  padding-top: 20px;
+  margin-top: 20px;
   display: inline-block;
   text-transform: uppercase;
   font-weight: 600;

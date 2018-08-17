@@ -181,3 +181,8 @@
   text-decoration: none;
   margin-right: 10px;
 }
+
+.contact-links {
+  display: flex;
+  align-items: space-around;
+}

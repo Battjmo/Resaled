@@ -1,6 +1,7 @@
 .show-container {
   display: flex;
-  margin-right: 200px;
+  margin-right: 300px;
+  margin-left: 300px;
   margin-top: 75px;
   margin-bottom: 100px;
 }
@@ -34,7 +35,6 @@
   margin-right: 0;
   box-sizing: border-box;
   position: relative;
-  margin-left: 100px;
   margin-right: 100px;
 }
 
@@ -46,6 +46,7 @@
 
 .email-pic {
   width: 34px;
+  color: -webkit-link;
 }
 
 .description {
@@ -72,5 +73,9 @@
 .user-item-count {
   font-size: 14px;
   line-height: 8px;
+  margin-bottom: 10px;
+}
+
+.listing-stars {
   margin-bottom: 10px;
 }

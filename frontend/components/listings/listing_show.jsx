@@ -90,6 +90,7 @@ class ListingShow extends React.Component {
             <p className="description-title">SELLER</p>
             <Link className="user-show-link" to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link>
               <p className="user-item-count">{this.getSellerListingCount()} Items for Sale</p>
+              <p className="listing-stars">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
               <p>{this.parseHeight()}</p>
           </div>
         </div>

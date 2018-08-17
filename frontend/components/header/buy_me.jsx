@@ -19,24 +19,19 @@ const BuyMe = ({currentUser}) => {
 
   <br/>
   <br/>
-
+  <br/>
+  <br/>
   <a href="https://github.com/Battjmo">
     <img src={window.githubURL} />
     Github
   </a>
   <br/>
   <br/>
+  <br/>
 
   <a href="https://www.linkedin.com/in/nicholas-battjes/">
     <img src={window.linkedinURL} />
     Linkedin
-  </a>
-
-  <br/>
-  <br/>
-  <a href="mailto:nhbattjes@gmail.com?subject=Resaled">
-    <img className="email-pic" src={window.emailURL} />
-    Email
   </a>
 
 
