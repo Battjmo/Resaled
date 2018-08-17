@@ -15,11 +15,13 @@
 
 .index {
   padding: 27px 27px 0;
-  width: 75%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   list-style: none;
+  margin-left: 200px;
 }
 
 .listing-link {
@@ -37,8 +39,8 @@
 
 .listing-index-image {
   max-width: 100%;
-  max-height: 279px;
-  min-height: 279px;
+  width: 209px;
+  height: 279px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   border-bottom: 1px solid #e1e1e1;
