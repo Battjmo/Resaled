@@ -66,9 +66,9 @@ class UserEditForm extends React.Component{
       formData.append('user[location]', this.state.location);
       formData.append('user[description]', this.state.description);
       e.preventDefault();
-      if (this.state.photoFile) {
-        formData.append(`user[photo]`, this.state.photoFile);
-      }
+      // if (this.state.photoFile) {
+      //   formData.append(`user[photo]`, this.state.photoFile);
+      // }
       this.props.updateUser(formData).then(({user}) => this.props.history.push(`/users/${user.id}`));
 
       // this.state.country = this.state.country || "United States";
@@ -76,6 +76,13 @@ class UserEditForm extends React.Component{
       // this.props.updateUser(user).then(({user}) => this.props.history.push(`/users/${user.id}`));
     }
 
+
+    // <div className="avatar-container">
+    // {preview}
+    // </div>
+    // <label className="avatar-header">Avatar</label>
+    // <br/>
+      // <input className="avatar-file" type="file" onChange={this.handleFile} />
 
 render() {
   console.log(this.props.user);
@@ -87,12 +94,8 @@ render() {
       </div>
       <form className="listing-form" onSubmit={this.handleSubmit}>
         <div className="user-edit-title">Edit Your Info</div>
-          <div className="avatar-container">
-          {preview}
-          </div>
-          <label className="avatar-header">Avatar</label>
-          <br/>
-          <input className="avatar-file" type="file" onChange={this.handleFile} />
+
+
         <div className="detail-columns">
           <div className="left-col">
             <label>Username

@@ -126,9 +126,6 @@ class UserShow extends React.Component {
           </div>
           {this.cantEditAdjustor()}
           </div>
-          <div className='listing-image-box'>
-          <img className="listing-image" src={user.photoUrl} />
-          </div>
           <div className="user-details">
           <Link to="#" className="user-listing-count">Listings ({listingsList.length})
           </Link>
