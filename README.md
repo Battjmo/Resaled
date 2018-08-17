@@ -86,7 +86,7 @@ categoryFilter(category = "") {
 
 ### Modals
 
-![modal image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/auth_modal.png)
+![modal gif](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/modal.gif)
 
 Modals were used to create an elegant and intuitive signin and signup process. If you investigate the purchase link on the listing detail page you may find another fun example lurking.
 
@@ -133,7 +133,7 @@ Some features on my to-do list:
 
 1. The ability to follow a listing, and have those listings appear in a separate feed on a user's profile page.
 
-2. Adding multiple photos per listing, viewable in a slideshow window, so you can see the backs of the listings, tags, etc. 
+2. Adding multiple photos per listing, viewable in a slideshow window, so you can see the backs of the listings, tags, etc.
 
 3. The ability to leave comments on other user's listings, preferably with filtering because comments are the very most dangerous part of the internet.
 
