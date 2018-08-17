@@ -23,7 +23,7 @@ The app uses the following technologies in its current implementation:
 
 ### Home Page
 
-![index image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/Index.png)
+![Index Image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/Index.png)
 
 The first thing a user sees on accessing the site is an index page of all the items available on the site. There is also a header at the top of all pages in which the user can create an account or sign in if they already have one. A demo account is available for those who wish to experience the full functionality of the app more quickly.
 
@@ -31,7 +31,7 @@ The index itself is made out of a flex box, which allows it to scale gracefully 
 
 ---
 
-
+![Search Image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/search.png)
 
 ### Search
 
@@ -80,6 +80,6 @@ categoryFilter(category = "") {
 
 ### Modals
 
-
-
 ![modal image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/auth_modal.png)
+
+Modals were used to create an elegant and intuitive signin and signup process. If you investigate the purchase link on the listing detail page you may find another fun example lurking.
