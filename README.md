@@ -4,6 +4,7 @@
 
 Resaled is clone of [Grailed](https://www.grailed.com/), a popular menswear reselling site. Thereon, users can browse, search for, create, edit, and delete listings for menswear items they wish to buy or sell. They can edit and view each other's profiles as well.
 
+
 ## Ingredients
 
 The app uses the following technologies in its current implementation:
@@ -16,7 +17,9 @@ The app uses the following technologies in its current implementation:
 
 4. Heroku hosting.
 
+
 ---
+
 
 ## Highlights
 
