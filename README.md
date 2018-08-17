@@ -2,16 +2,13 @@
 
 [Live site](https://resaled.herokuapp.com/#/)
 
-Resaled is clone of [Grailed](https://www.grailed.com/), a popular menswear
-reselling site. Thereon, users can browse, search for, create, edit, and delete
-listings for menswear items they wish to buy or sell. They can edit and view
-each others profiles as well.
+Resaled is clone of [Grailed](https://www.grailed.com/), a popular menswear reselling site. Thereon, users can browse, search for, create, edit, and delete listings for menswear items they wish to buy or sell. They can edit and view each other's profiles as well.
 
 ## Ingredients
 
 The app uses the following technologies in its current implementation:
 
-1. A Ruby on Rails Backend, with a smattering of jBuilder and jQuery for database access.
+1. A Ruby on Rails / PostgresQL backend,  a smattering of jBuilder and jQuery for database access.
 
 2. A React / Javascript frontend.
 
@@ -32,6 +29,8 @@ The index itself is made out of a flex box, which allows it to scale gracefully 
 ---
 
 ![Search Image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/search.png)
+
+![Search GIF]('search.gif')
 
 ### Search
 
@@ -118,5 +117,13 @@ They looks a little something like this, in CSS:
 ```
 
 The box shadow on the child combined with the z-index give everything a nice sense of depth.
+
+Some features on my to-do list:
+
+1. The ability to follow a listing, and have those listings appear in a separate feed on a user's profile page.
+
+2. The ability to leave comments on other user's listings, preferably with filtering because comments are the very most dangerous part of the internet.
+
+3. Complex savable filters for every aspect of listings.
 
 Thanks for reading, and enjoy the site!
