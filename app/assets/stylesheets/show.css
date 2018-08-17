@@ -1,9 +1,13 @@
 .show-container {
   display: flex;
-  margin-right: 300px;
-  margin-left: 300px;
+  /* margin-right: 300px;
+  margin-left: 200px;
   margin-top: 75px;
-  margin-bottom: 100px;
+  margin-bottom: 100px; */
+  margin: auto;
+  margin-top: 75px;
+  width: 1000px;
+  box-sizing: border-box;
 }
 
 .listing-brand {
@@ -19,14 +23,14 @@
 }
 
 .listing-image {
-  width: 700px;
+  width: 600px;
   max-height: 100%;
 }
 
 .listing-info-box {
-  width: 340px;
-  flex: 4;
+  width: 400px;
   word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .listing-image-box {
@@ -35,7 +39,6 @@
   margin-right: 0;
   box-sizing: border-box;
   position: relative;
-  margin-right: 100px;
 }
 
 .description-title {
