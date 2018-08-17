@@ -74,6 +74,15 @@ class UserShow extends React.Component {
     );
   }
 
+  parseCountry() {
+    if (!this.props.user.country) {
+      return "No Location";
+    }
+    else {
+      return this.props.user.country;
+    }
+  }
+
   headerNameAdjustor() {
     if (this.canEdit()) {
       return 'offset-username';
@@ -121,7 +130,7 @@ class UserShow extends React.Component {
           <Link to="#" className="user-listing-count">Listings ({listingsList.length})
           </Link>
           <div className="user-subdetails">
-          <div className="user-country">{user.country}</div>
+          <div className="user-country">{this.parseCountry()}</div>
 
           <div className="user-size">
           {this.parseSize()}

@@ -8,7 +8,7 @@ class ListingShow extends React.Component {
     this.canEdit = this.canEdit.bind(this);
     this.delete = this.delete.bind(this);
     this.getSellerListingCount = this.getSellerListingCount.bind(this);
-    this.parseHeight = this.parseHeight.bind(this);
+    this.parseHeight = this.parseSize.bind(this);
     this.state = {};
   }
 
@@ -39,12 +39,25 @@ class ListingShow extends React.Component {
   }
 }
 
-  parseHeight() {
+  parseSize() {
+    if (!this.state.listingUserHeight && !this.state.listingUserWeight) {
+      return "No Measurements Given";
+    } else if (!this.state.listingUserHeight) {
+      return `${this.state.listingUserWeight} lbs`;
+    }
     const sellerFeet = Math.floor((this.state.listingUserHeight) / 12);
     const sellerInches = ((this.state.listingUserHeight) % 12);
-    return (
-      `${sellerFeet} ft ${sellerInches} in, ${this.state.listingUserWeight} lbs`
-    );
+    if (!this.state.listingUserWeight){
+      return `${sellerFeet} ft ${sellerInches} in`;
+    } else return `${sellerFeet} ft ${sellerInches} in, ${this.state.listingUserWeight} lbs`;
+  }
+
+  parseWeight() {
+    if (!this.state.listingUserWeight) {
+      return "No Weight Given";
+    } else {
+      return `${this.state.listingUserWeight} lbs`;
+    }
   }
 
   getSellerListingCount() {
@@ -91,7 +104,7 @@ class ListingShow extends React.Component {
             <Link className="user-show-link" to={`/users/${this.state.listingUserId}`}>{this.state.listingUsername}</Link>
               <p className="user-item-count">{this.getSellerListingCount()} Items for Sale</p>
               <p className="listing-stars">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
-              <p>{this.parseHeight()}</p>
+              <p>{this.parseSize()}</p>
           </div>
         </div>
       </div>
