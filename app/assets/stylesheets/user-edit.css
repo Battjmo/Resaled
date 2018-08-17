@@ -17,7 +17,7 @@
   line-height: 30px;
   text-align: center;
   margin-bottom: 20px;
-  margin-right: 67px;
+  margin-right: 60px;
 }
 
 .size {
@@ -49,4 +49,29 @@
 .size-label {
   margin-top: 19px;
   width: 40%
+}
+
+.avatar-container {
+  margin-left: 317px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.avatar-preview {
+  border-radius: 50%;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.avatar-header {
+  margin-left: 347px;
+}
+
+.avatar-file {
+  margin-left: 320px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100px;
+
 }

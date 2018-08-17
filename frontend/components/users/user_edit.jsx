@@ -8,6 +8,7 @@ class UserEditForm extends React.Component{
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -17,7 +18,6 @@ class UserEditForm extends React.Component{
   }
 
   renderErrors() {
-
     return(
       <ul className="listing-error-list">
         {this.props.errors.map((error, i) => (
@@ -42,25 +42,44 @@ class UserEditForm extends React.Component{
     }
   }
 
+  handleFile(e) {
+   const file = e.currentTarget.files[0];
+   const fileReader = new FileReader();
+   fileReader.onloadend = () => {
+
+     this.setState({photoFile: file, photoUrl: fileReader.result});
+   };
+   if (file) {
+     fileReader.readAsDataURL(file);
+   }
+  }
 
     handleSubmit(e) {
-      // const formData = new FormData();
-      // this.state.location = this.state.location || "United States";
-      // formData.append('user[id]', this.state.id);
-      // formData.append('user[username]', this.state.username);
-      // formData.append('user[email]', this.state.email);
-      // formData.append('user[height]', this.state.height);
-      // formData.append('user[weight]', this.state.weight);
-      // formData.append('user[location]', this.state.location);
-      // formData.append('user[description]', this.state.description);
       e.preventDefault();
-      this.state.country = this.state.country || "United States";
-      const user = Object.assign({}, this.state);
-      this.props.updateUser(user).then(({user}) => this.props.history.push(`/users/${user.id}`));
+      const formData = new FormData();
+      this.state.location = this.state.location || "United States";
+      formData.append('user[id]', this.state.id);
+      formData.append('user[username]', this.state.username);
+      formData.append('user[email]', this.state.email);
+      formData.append('user[height]', this.state.height);
+      formData.append('user[weight]', this.state.weight);
+      formData.append('user[location]', this.state.location);
+      formData.append('user[description]', this.state.description);
+      e.preventDefault();
+      if (this.state.photoFile) {
+        formData.append(`user[photo]`, this.state.photoFile);
+      }
+      this.props.updateUser(formData).then(({user}) => this.props.history.push(`/users/${user.id}`));
+
+      // this.state.country = this.state.country || "United States";
+      // const user = Object.assign({}, this.state);
+      // this.props.updateUser(user).then(({user}) => this.props.history.push(`/users/${user.id}`));
     }
 
 
 render() {
+  console.log(this.props.user);
+  const preview = this.state.photoUrl ? <img className="avatar-preview" src={this.state.photoUrl} /> : <img className="avatar-preview" src={window.avatarURL} />;
   return(
     <div>
       <div className="user-edit-header">
@@ -68,6 +87,12 @@ render() {
       </div>
       <form className="listing-form" onSubmit={this.handleSubmit}>
         <div className="user-edit-title">Edit Your Info</div>
+          <div className="avatar-container">
+          {preview}
+          </div>
+          <label className="avatar-header">Avatar</label>
+          <br/>
+          <input className="avatar-file" type="file" onChange={this.handleFile} />
         <div className="detail-columns">
           <div className="left-col">
             <label>Username
