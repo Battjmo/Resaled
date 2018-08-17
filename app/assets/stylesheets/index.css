@@ -1,16 +1,9 @@
-.index-wrapper-wrapper {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
 .index-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-right: 0;
-  height: 100%
+  height: 100%;
+  margin-left: 50px;
 }
 
 .index {
@@ -21,8 +14,6 @@
   align-items: center;
   flex-direction: row;
   list-style: none;
-  margin-left: 200px;
-  margin-right: 120px;
 }
 
 .listing-link {
