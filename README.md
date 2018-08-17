@@ -30,7 +30,7 @@ The index itself is made out of a flex box, which allows it to scale gracefully 
 
 ![Search Image](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/search.png)
 
-![Search GIF](search.gif)
+![Search GIF](https://github.com/Battjmo/GrailedClone/blob/master/app/assets/images/search.gif)
 
 ### Search
 
