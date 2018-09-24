@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   context: __dirname,
   entry: './frontend/resaled.jsx',
 
