@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
     return (
       <div className="signin-form-container">
         <form onSubmit={this.handleSubmit} className="signin-form-box">
-          <div>JOIN THE COMMUNITY</div>
+          <div>JOIN RESALED, THE COMMUNITY FOR HIGH-END MENSWEAR RESELLING</div>
           <br/>
           <br/>
           <div className="signupPrompt">{this.props.formType} below or {this.props.otherForm}
