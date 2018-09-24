@@ -13,6 +13,7 @@ import CreateListingFormContainer from './listings/create_listing_form_container
 
 import {AuthRoute} from '../util/route_util';
 import Modal from './header/modal';
+import Favicon from 'react-favicon';
 
 const App = () => (
   <HashRouter>
@@ -20,6 +21,7 @@ const App = () => (
     <header>
       <Route path="/" component={HeaderContainer} />
       <Modal />
+      <Favicon url="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-128.png" />
       </header>
     <Switch>
       <AuthRoute exact path="/listings/new" component={CreateListingFormContainer} />

@@ -5,6 +5,7 @@ import Root from './components/root';
 import { signup, signin, signout } from './actions/session_actions';
 import { fetchListings } from './actions/listing_actions';
 import { fetchUser } from './actions/user_actions';
+import Favicon from 'react-favicon';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
