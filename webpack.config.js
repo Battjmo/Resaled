@@ -1,4 +1,7 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
 
 
 module.exports = {
