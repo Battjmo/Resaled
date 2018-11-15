@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ReactGA from 'react-ga';
 import HeaderContainer from './header/header_container';
 import SignupFormContainer from './header/signup_form_container';
 import SigninFormContainer from './header/signin_form_container';
@@ -14,6 +15,9 @@ import CreateListingFormContainer from './listings/create_listing_form_container
 import {AuthRoute} from '../util/route_util';
 import Modal from './header/modal';
 import Favicon from 'react-favicon';
+
+ReactGA.initialize('UA-129320580-3');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const App = () => (
   <HashRouter>

@@ -65,6 +65,7 @@ color: #fff;
 .category_field {
   display:inline;
   -webkit-appearance: none;
+  -moz-appearance:none;
   width: 375px;
   border-radius: 0px;
   background-color: #fff;
